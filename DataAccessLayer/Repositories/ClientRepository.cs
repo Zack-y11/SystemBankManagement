@@ -98,5 +98,24 @@ namespace DataAccessLayer.Repositories
                 }
             }
         }
+        public void LoginClient(string name, string password)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM Clients WHERE Name = @Name AND Password = @Password";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Password", password);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while logging in.", ex);
+                }
+            }
+        }
     }
 }

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             transactionDataGridView = new DataGridView();
-            txtDescripcion = new TextBox();
+            descriptionTextBox = new TextBox();
             direccionAccount = new Label();
-            txtCantidad = new TextBox();
-            telefonoAccount = new Label();
-            duiAccount = new Label();
+            amountTextBox = new TextBox();
+            amountLabel = new Label();
             label1 = new Label();
             fechaTransaccion = new DateTimePicker();
-            btnEditarTransaccion = new Button();
-            btnBorrarTransaccion = new Button();
-            tipoCuentaBox = new ComboBox();
+            accountNumberLabel = new Label();
+            accountNumberTextBox = new TextBox();
+            updateButton = new Button();
+            deleteButton = new Button();
             ((System.ComponentModel.ISupportInitialize)transactionDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -47,60 +47,50 @@
             transactionDataGridView.BackgroundColor = Color.Khaki;
             transactionDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             transactionDataGridView.GridColor = Color.Khaki;
-            transactionDataGridView.Location = new Point(12, 256);
+            transactionDataGridView.Location = new Point(12, 192);
             transactionDataGridView.Name = "transactionDataGridView";
             transactionDataGridView.Size = new Size(776, 182);
             transactionDataGridView.TabIndex = 0;
             // 
-            // txtDescripcion
+            // descriptionTextBox
             // 
-            txtDescripcion.Location = new Point(354, 201);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(215, 23);
-            txtDescripcion.TabIndex = 25;
+            descriptionTextBox.Location = new Point(212, 133);
+            descriptionTextBox.Name = "descriptionTextBox";
+            descriptionTextBox.Size = new Size(215, 23);
+            descriptionTextBox.TabIndex = 25;
             // 
             // direccionAccount
             // 
             direccionAccount.AutoSize = true;
             direccionAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            direccionAccount.Location = new Point(255, 153);
+            direccionAccount.Location = new Point(488, 9);
             direccionAccount.Name = "direccionAccount";
             direccionAccount.Size = new Size(55, 19);
             direccionAccount.TabIndex = 24;
             direccionAccount.Text = "Fecha:";
             // 
-            // txtCantidad
+            // amountTextBox
             // 
-            txtCantidad.Location = new Point(354, 96);
-            txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(215, 23);
-            txtCantidad.TabIndex = 23;
+            amountTextBox.Location = new Point(212, 69);
+            amountTextBox.Name = "amountTextBox";
+            amountTextBox.Size = new Size(215, 23);
+            amountTextBox.TabIndex = 23;
             // 
-            // telefonoAccount
+            // amountLabel
             // 
-            telefonoAccount.AutoSize = true;
-            telefonoAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            telefonoAccount.Location = new Point(247, 100);
-            telefonoAccount.Name = "telefonoAccount";
-            telefonoAccount.Size = new Size(77, 19);
-            telefonoAccount.TabIndex = 20;
-            telefonoAccount.Text = "Cantidad:";
-            // 
-            // duiAccount
-            // 
-            duiAccount.AutoSize = true;
-            duiAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            duiAccount.Location = new Point(263, 28);
-            duiAccount.Name = "duiAccount";
-            duiAccount.Size = new Size(47, 19);
-            duiAccount.TabIndex = 19;
-            duiAccount.Text = "Tipo:";
+            amountLabel.AutoSize = true;
+            amountLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            amountLabel.Location = new Point(50, 73);
+            amountLabel.Name = "amountLabel";
+            amountLabel.Size = new Size(77, 19);
+            amountLabel.TabIndex = 20;
+            amountLabel.Text = "Cantidad:";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(247, 201);
+            label1.Location = new Point(50, 137);
             label1.Name = "label1";
             label1.Size = new Size(96, 19);
             label1.TabIndex = 26;
@@ -108,36 +98,49 @@
             // 
             // fechaTransaccion
             // 
-            fechaTransaccion.Location = new Point(354, 153);
+            fechaTransaccion.Location = new Point(559, 7);
             fechaTransaccion.Name = "fechaTransaccion";
             fechaTransaccion.Size = new Size(215, 23);
             fechaTransaccion.TabIndex = 27;
             // 
-            // btnEditarTransaccion
+            // accountNumberLabel
             // 
-            btnEditarTransaccion.Location = new Point(621, 68);
-            btnEditarTransaccion.Name = "btnEditarTransaccion";
-            btnEditarTransaccion.Size = new Size(75, 23);
-            btnEditarTransaccion.TabIndex = 29;
-            btnEditarTransaccion.Text = "Editar";
-            btnEditarTransaccion.UseVisualStyleBackColor = true;
+            accountNumberLabel.AutoSize = true;
+            accountNumberLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            accountNumberLabel.Location = new Point(50, 9);
+            accountNumberLabel.Name = "accountNumberLabel";
+            accountNumberLabel.Size = new Size(142, 19);
+            accountNumberLabel.TabIndex = 32;
+            accountNumberLabel.Text = "Numero de Cuenta";
             // 
-            // btnBorrarTransaccion
+            // accountNumberTextBox
             // 
-            btnBorrarTransaccion.Location = new Point(621, 149);
-            btnBorrarTransaccion.Name = "btnBorrarTransaccion";
-            btnBorrarTransaccion.Size = new Size(75, 23);
-            btnBorrarTransaccion.TabIndex = 30;
-            btnBorrarTransaccion.Text = "Borrar";
-            btnBorrarTransaccion.UseVisualStyleBackColor = true;
+            accountNumberTextBox.Location = new Point(212, 5);
+            accountNumberTextBox.Name = "accountNumberTextBox";
+            accountNumberTextBox.Size = new Size(215, 23);
+            accountNumberTextBox.TabIndex = 33;
             // 
-            // tipoCuentaBox
+            // updateButton
             // 
-            tipoCuentaBox.FormattingEnabled = true;
-            tipoCuentaBox.Location = new Point(354, 29);
-            tipoCuentaBox.Name = "tipoCuentaBox";
-            tipoCuentaBox.Size = new Size(215, 23);
-            tipoCuentaBox.TabIndex = 31;
+            updateButton.BackColor = Color.Goldenrod;
+            updateButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            updateButton.Location = new Point(488, 115);
+            updateButton.Name = "updateButton";
+            updateButton.Size = new Size(102, 41);
+            updateButton.TabIndex = 34;
+            updateButton.Text = "Actualizar";
+            updateButton.UseVisualStyleBackColor = false;
+            // 
+            // deleteButton
+            // 
+            deleteButton.BackColor = Color.Goldenrod;
+            deleteButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            deleteButton.Location = new Point(672, 115);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(102, 41);
+            deleteButton.TabIndex = 35;
+            deleteButton.Text = "Eliminar";
+            deleteButton.UseVisualStyleBackColor = false;
             // 
             // TransactionForm
             // 
@@ -145,16 +148,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
             ClientSize = new Size(800, 450);
-            Controls.Add(tipoCuentaBox);
-            Controls.Add(btnBorrarTransaccion);
-            Controls.Add(btnEditarTransaccion);
+            Controls.Add(deleteButton);
+            Controls.Add(updateButton);
+            Controls.Add(accountNumberTextBox);
+            Controls.Add(accountNumberLabel);
             Controls.Add(fechaTransaccion);
             Controls.Add(label1);
-            Controls.Add(txtDescripcion);
+            Controls.Add(descriptionTextBox);
             Controls.Add(direccionAccount);
-            Controls.Add(txtCantidad);
-            Controls.Add(telefonoAccount);
-            Controls.Add(duiAccount);
+            Controls.Add(amountTextBox);
+            Controls.Add(amountLabel);
             Controls.Add(transactionDataGridView);
             Name = "TransactionForm";
             Text = "TransactionForm";
@@ -166,15 +169,16 @@
         #endregion
 
         private DataGridView transactionDataGridView;
-        private TextBox txtDescripcion;
+        private TextBox descriptionTextBox;
         private Label direccionAccount;
-        private TextBox txtCantidad;
-        private Label telefonoAccount;
-        private Label duiAccount;
+        private TextBox amountTextBox;
+        private Label amountLabel;
         private Label label1;
         private DateTimePicker fechaTransaccion;
-        private Button btnEditarTransaccion;
-        private Button btnBorrarTransaccion;
-        private ComboBox tipoCuentaBox;
+        private ComboBox comboBox1;
+        private Label accountNumberLabel;
+        private TextBox accountNumberTextBox;
+        private Button updateButton;
+        private Button deleteButton;
     }
 }

@@ -33,5 +33,9 @@ namespace BusinessLayer.Services
         {
             _transactionRepository.DeleteTransfer(id);
         }
+        public DataTable GetTransacctionsById(string accountNumber)
+        {
+            return _transactionRepository.GetTransacctionsById(accountNumber);
+        }
     }
 }

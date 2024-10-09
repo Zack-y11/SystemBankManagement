@@ -32,6 +32,23 @@ namespace DataAccessLayer.Repositories
             }
             return transactionTable;
         }
+        // Transacction by idClient and account number
+        public DataTable GetTransacctionsById(string accountNumber)
+        {
+            DataTable transactionTable = new DataTable();
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = $"SELECT T.TransactionId, C.Name AS ClientName, A.AccountNumber, T.TypeTransaction, T.Amount, T.DateTransaction, T.Description FROM Transactions T JOIN Accounts A ON T.AccountId = A.AccountId JOIN Clients C ON A.ClientId = C.ClientId WHERE A.AccountNumber = 'ACC12345';";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@AccountNumber", accountNumber);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                transactionTable.Load(reader);
+            }
+            return transactionTable;
+        }
+
 
         public void AddTransfer(Transaction transaction)
         {

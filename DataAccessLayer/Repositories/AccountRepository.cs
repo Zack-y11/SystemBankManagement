@@ -35,6 +35,26 @@ namespace DataAccessLayer.Repositories
             }
             return accountsTable;
         }
+        public DataTable GetAllTypes()
+        {
+            DataTable typesTable = new DataTable();
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT AccountTypeId, Type FROM AccountType";
+                SqlCommand command = new SqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    typesTable.Load(reader);
+                }
+                catch(SqlException ex)
+                {
+                    throw new Exception("An error occurred while getting the account types", ex);
+                }
+            }
+            return typesTable;
+        }
 
         public void AddAccount(Account account) 
         {
@@ -118,6 +138,46 @@ namespace DataAccessLayer.Repositories
                     command.ExecuteNonQuery();
                 }
                 catch(SqlException ex)
+                {
+                    throw new Exception("An error occurred while processing the transaction", ex);
+                }
+            }
+        }
+        public decimal GetAccountBalance(string AccountNumber)
+        {
+            decimal balance = 0;
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT Saldo FROM Accounts WHERE AccountNumber = @AccountNumber";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@AccountNumber", AccountNumber);
+                try
+                {
+                    connection.Open();
+                    balance = Convert.ToDecimal(command.ExecuteScalar());
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while getting the account balance", ex);
+                }
+            }
+            return balance;
+        }
+        //Making withdrawal
+        public void MakingWithdrawal(decimal amount, string AccountNumber)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "UPDATE Accounts SET Saldo = Saldo - @Amount WHERE AccountNumber = @AccountNumber";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Amount", amount);
+                command.Parameters.AddWithValue("@AccountNumber", AccountNumber);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
                 {
                     throw new Exception("An error occurred while processing the transaction", ex);
                 }

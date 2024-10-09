@@ -22,6 +22,10 @@ namespace BusinessLayer.Services
         {
             return _accountRepository.GetAllAccounts();
         }
+        public DataTable GetTypes()
+        {
+            return _accountRepository.GetAllTypes();
+        }
         public void AddAccount(Account account)
         {
             _accountRepository.AddAccount(account);
@@ -38,6 +42,18 @@ namespace BusinessLayer.Services
         {
             _accountRepository.MakingTransacction(amount, accountNumber);
         }
+        public void MakeWithdrawal(decimal amount, string accountNumber)
+        {
+            decimal currentBalance = _accountRepository.GetAccountBalance(accountNumber);
 
+            if(currentBalance >= amount)
+            {
+                _accountRepository.MakingWithdrawal(amount, accountNumber);
+            }
+            else
+            {
+                throw new Exception("Insufficient funds");
+            }
+        }
     }
 }

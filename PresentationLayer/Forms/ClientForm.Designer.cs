@@ -39,6 +39,7 @@
             duiAccount = new Label();
             nameAcoount = new Label();
             btnEditarCliente = new Button();
+            addClientButton = new Button();
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             btnBorrarCliente.BackColor = Color.Goldenrod;
             btnBorrarCliente.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBorrarCliente.Location = new Point(582, 142);
+            btnBorrarCliente.Location = new Point(582, 161);
             btnBorrarCliente.Name = "btnBorrarCliente";
             btnBorrarCliente.Size = new Size(102, 41);
             btnBorrarCliente.TabIndex = 18;
@@ -135,18 +136,30 @@
             // 
             btnEditarCliente.BackColor = Color.Goldenrod;
             btnEditarCliente.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarCliente.Location = new Point(582, 30);
+            btnEditarCliente.Location = new Point(582, 98);
             btnEditarCliente.Name = "btnEditarCliente";
             btnEditarCliente.Size = new Size(102, 41);
             btnEditarCliente.TabIndex = 19;
             btnEditarCliente.Text = "Editar";
             btnEditarCliente.UseVisualStyleBackColor = false;
             // 
+            // addClientButton
+            // 
+            addClientButton.BackColor = Color.Goldenrod;
+            addClientButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addClientButton.Location = new Point(582, 29);
+            addClientButton.Name = "addClientButton";
+            addClientButton.Size = new Size(102, 41);
+            addClientButton.TabIndex = 20;
+            addClientButton.Text = "Agregar";
+            addClientButton.UseVisualStyleBackColor = false;
+            // 
             // ClientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(addClientButton);
             Controls.Add(btnEditarCliente);
             Controls.Add(btnBorrarCliente);
             Controls.Add(txtDireccion);
@@ -178,5 +191,6 @@
         private Label duiAccount;
         private Label nameAcoount;
         private Button btnEditarCliente;
+        private Button addClientButton;
     }
 }

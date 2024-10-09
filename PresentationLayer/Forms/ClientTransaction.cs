@@ -11,19 +11,24 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms
 {
-
-    public partial class TransactionForm : Form
+    public partial class ClientTransaction : Form
     {
         private TransactionsServices _transactionServices;
-        public TransactionForm()
+        public ClientTransaction()
         {
             InitializeComponent();
             _transactionServices = new TransactionsServices();
-            LoadDataTransactions();
+
         }
-        public void LoadDataTransactions()
+
+        private void historyButton_Click(object sender, EventArgs e)
         {
             transactionDataGridView.DataSource = _transactionServices.GetTransacctions();
+            LoadDatabyAccount();
+        }
+        private void LoadDatabyAccount()
+        {
+            transactionDataGridView.DataSource = _transactionServices.GetTransacctionsById(accountTextBox.Text);
         }
     }
 }

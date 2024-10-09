@@ -35,5 +35,9 @@ namespace BusinessLayer.Services
         {
             _clientRepository.DeleteClient(idClient);
         }
+        public void LoginClient(string name, string password)
+        {
+            _clientRepository.LoginClient(name, password);
+        }
     }
 }
