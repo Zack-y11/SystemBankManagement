@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms
 {
-    partial class AccountForm
+    partial class TransactionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cuentasDataGridView = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)cuentasDataGridView).BeginInit();
+            transactionDataGridView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)transactionDataGridView).BeginInit();
             SuspendLayout();
             // 
-            // cuentasDataGridView
+            // transactionDataGridView
             // 
-            cuentasDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            cuentasDataGridView.Location = new Point(12, 159);
-            cuentasDataGridView.Name = "cuentasDataGridView";
-            cuentasDataGridView.Size = new Size(776, 197);
-            cuentasDataGridView.TabIndex = 0;
+            transactionDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            transactionDataGridView.Location = new Point(12, 199);
+            transactionDataGridView.Name = "transactionDataGridView";
+            transactionDataGridView.Size = new Size(776, 182);
+            transactionDataGridView.TabIndex = 0;
             // 
-            // AccountForm
+            // TransactionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(cuentasDataGridView);
-            Name = "AccountForm";
-            Text = " ";
-            ((System.ComponentModel.ISupportInitialize)cuentasDataGridView).EndInit();
+            Controls.Add(transactionDataGridView);
+            Name = "TransactionForm";
+            Text = "TransactionForm";
+            ((System.ComponentModel.ISupportInitialize)transactionDataGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView cuentasDataGridView;
+        private DataGridView transactionDataGridView;
     }
 }

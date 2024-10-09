@@ -28,5 +28,11 @@ namespace PresentationLayer.Forms
             AccountForm accountForm = new AccountForm();
             accountForm.ShowDialog();
         }
+
+        private void TansactionsButton_Click(object sender, EventArgs e)
+        {
+            TransactionForm transactionForm = new TransactionForm();
+            transactionForm.ShowDialog();
+        }
     }
 }

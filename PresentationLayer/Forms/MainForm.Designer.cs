@@ -30,11 +30,12 @@
         {
             clientsButton = new Button();
             cuentasButton = new Button();
+            TansactionsButton = new Button();
             SuspendLayout();
             // 
             // clientsButton
             // 
-            clientsButton.Location = new Point(128, 168);
+            clientsButton.Location = new Point(12, 168);
             clientsButton.Name = "clientsButton";
             clientsButton.Size = new Size(204, 69);
             clientsButton.TabIndex = 0;
@@ -44,7 +45,7 @@
             // 
             // cuentasButton
             // 
-            cuentasButton.Location = new Point(411, 168);
+            cuentasButton.Location = new Point(314, 168);
             cuentasButton.Name = "cuentasButton";
             cuentasButton.Size = new Size(204, 69);
             cuentasButton.TabIndex = 1;
@@ -52,11 +53,22 @@
             cuentasButton.UseVisualStyleBackColor = true;
             cuentasButton.Click += cuentasButton_Click;
             // 
+            // TansactionsButton
+            // 
+            TansactionsButton.Location = new Point(584, 168);
+            TansactionsButton.Name = "TansactionsButton";
+            TansactionsButton.Size = new Size(204, 69);
+            TansactionsButton.TabIndex = 2;
+            TansactionsButton.Text = "Ver Transacciones";
+            TansactionsButton.UseVisualStyleBackColor = true;
+            TansactionsButton.Click += TansactionsButton_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(TansactionsButton);
             Controls.Add(cuentasButton);
             Controls.Add(clientsButton);
             Name = "MainForm";
@@ -68,5 +80,6 @@
 
         private Button clientsButton;
         private Button cuentasButton;
+        private Button TansactionsButton;
     }
 }
