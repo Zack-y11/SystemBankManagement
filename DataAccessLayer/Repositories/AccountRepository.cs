@@ -47,8 +47,15 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@OpenDateAccount", account.OpenDateAccount);
                 command.Parameters.AddWithValue("@AccountTypeId", account.AccountTypeId);
                 command.Parameters.AddWithValue("@ClientId", account.ClientId);
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while adding the account.", ex);
+                }
             }
         }
 
@@ -64,8 +71,16 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@AccountTypeId", account.AccountTypeId);
                 command.Parameters.AddWithValue("@ClientId", account.ClientId);
                 command.Parameters.AddWithValue("@AccountId", account.AccountId);
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch(SqlException ex)
+                {
+                    throw new Exception("An error occurred while updating the Account.", ex);
+                }
+
 
             }
         }
@@ -76,9 +91,38 @@ namespace DataAccessLayer.Repositories
                 string query = "DELETE FROM Accounts WHERE Id = @AccountId ";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AccountId", id);
-                connection.Open(); 
-                command.ExecuteNonQuery();
+
+                try
+                {
+                    connection.Open(); 
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while deleting the account.", ex);
+                }
+                
             }
         }
+        public void MakingTransacction(decimal amount, string AccountNumber)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "UPDATE Accounts SET Saldo = Saldo + @Amount WHERE AccountNumber = @AccountNumber\r\n";
+                SqlCommand command = new SqlCommand (query, connection);
+                command.Parameters.AddWithValue("Saldo", amount);
+                command.Parameters.AddWithValue("@AccountNumber", AccountNumber);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch(SqlException ex)
+                {
+                    throw new Exception("An error occurred while processing the transaction", ex);
+                }
+            }
+        }
+        
     }   
 }

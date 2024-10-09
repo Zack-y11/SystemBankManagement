@@ -34,5 +34,10 @@ namespace BusinessLayer.Services
         {
             _accountRepository.DeleteAccount(id);
         }
+        public void MakeTransaction(decimal amount, string accountNumber)
+        {
+            _accountRepository.MakingTransacction(amount, accountNumber);
+        }
+
     }
 }

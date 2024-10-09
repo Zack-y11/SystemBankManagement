@@ -45,8 +45,15 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@Amount", transaction.Amount);
                 command.Parameters.AddWithValue("@DateTransaction", transaction.Date);
                 command.Parameters.AddWithValue("@Description", transaction.Description);
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open(); 
+                    command.ExecuteNonQuery(); 
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while updating the transaction.", ex);
+                }
             }
         }
 
@@ -62,8 +69,16 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@DateTransaction", transaction.Date);
                 command.Parameters.AddWithValue("@Description", transaction.Description);
                 command.Parameters.AddWithValue("@TransactionId", transaction.TransactionId);
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open(); // Open the connection
+                    command.ExecuteNonQuery(); // Execute the update
+                }
+                catch (SqlException ex)
+                {
+                    // Handle exception (log it or rethrow)
+                    throw new Exception("An error occurred while updating the transaction.", ex);
+                }
             }
         }
 
@@ -74,8 +89,16 @@ namespace DataAccessLayer.Repositories
                 string query = "DELETE FROM Transactions WHERE Id = @TransactionId";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@TransactionId", id);
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open(); 
+                    command.ExecuteNonQuery(); 
+                }
+                catch (SqlException ex)
+                {
+
+                    throw new Exception("An error occurred while deleting the transaction.", ex);
+                }
 
             }
         }

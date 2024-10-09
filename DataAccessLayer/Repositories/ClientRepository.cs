@@ -45,8 +45,15 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@Dui", client.Dui);
                 command.Parameters.AddWithValue("@PhoneNumber", client.PhoneNumber);
                 command.Parameters.AddWithValue("@Address", client.Address);
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while adding the Client.", ex);
+                }
             }
         }
 
@@ -61,8 +68,15 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@PhoneNumber", client.PhoneNumber);
                 command.Parameters.AddWithValue("@Address", client.Address);
                 command.Parameters.AddWithValue("@ClientId", client.Id);
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open(); 
+                    command.ExecuteNonQuery(); 
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while updating the Client.", ex);
+                }
             }
         }
 
@@ -73,8 +87,15 @@ namespace DataAccessLayer.Repositories
                 string query = "DELETE * FROM Client WHERE Id = @ClientId";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ClientId", id);
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while deleting the Client.", ex);
+                }
             }
         }
     }
