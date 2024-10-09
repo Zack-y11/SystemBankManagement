@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             clientsDataGridView = new DataGridView();
-            btnRegistrar = new Button();
+            btnBorrarCliente = new Button();
             txtDireccion = new TextBox();
             direccionAccount = new Label();
             txtTelefono = new TextBox();
@@ -38,6 +38,7 @@
             telefonoAccount = new Label();
             duiAccount = new Label();
             nameAcoount = new Label();
+            btnEditarCliente = new Button();
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -51,16 +52,16 @@
             clientsDataGridView.Size = new Size(776, 150);
             clientsDataGridView.TabIndex = 0;
             // 
-            // btnRegistrar
+            // btnBorrarCliente
             // 
-            btnRegistrar.BackColor = Color.Goldenrod;
-            btnRegistrar.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrar.Location = new Point(583, 86);
-            btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(102, 41);
-            btnRegistrar.TabIndex = 18;
-            btnRegistrar.Text = "Registrar";
-            btnRegistrar.UseVisualStyleBackColor = false;
+            btnBorrarCliente.BackColor = Color.Goldenrod;
+            btnBorrarCliente.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBorrarCliente.Location = new Point(582, 142);
+            btnBorrarCliente.Name = "btnBorrarCliente";
+            btnBorrarCliente.Size = new Size(102, 41);
+            btnBorrarCliente.TabIndex = 18;
+            btnBorrarCliente.Text = "Borrar";
+            btnBorrarCliente.UseVisualStyleBackColor = false;
             // 
             // txtDireccion
             // 
@@ -130,12 +131,24 @@
             nameAcoount.TabIndex = 10;
             nameAcoount.Text = "Nombre:";
             // 
+            // btnEditarCliente
+            // 
+            btnEditarCliente.BackColor = Color.Goldenrod;
+            btnEditarCliente.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditarCliente.Location = new Point(582, 30);
+            btnEditarCliente.Name = "btnEditarCliente";
+            btnEditarCliente.Size = new Size(102, 41);
+            btnEditarCliente.TabIndex = 19;
+            btnEditarCliente.Text = "Editar";
+            btnEditarCliente.UseVisualStyleBackColor = false;
+            // 
             // ClientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnRegistrar);
+            Controls.Add(btnEditarCliente);
+            Controls.Add(btnBorrarCliente);
             Controls.Add(txtDireccion);
             Controls.Add(direccionAccount);
             Controls.Add(txtTelefono);
@@ -155,7 +168,7 @@
         #endregion
 
         private DataGridView clientsDataGridView;
-        private Button btnRegistrar;
+        private Button btnBorrarCliente;
         private TextBox txtDireccion;
         private Label direccionAccount;
         private TextBox txtTelefono;
@@ -164,5 +177,6 @@
         private Label telefonoAccount;
         private Label duiAccount;
         private Label nameAcoount;
+        private Button btnEditarCliente;
     }
 }
