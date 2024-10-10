@@ -26,6 +26,10 @@ namespace BusinessLayer.Services
         {
             return _accountRepository.GetAllTypes();
         }
+        public DataTable GetAllClients()
+        {
+            return _accountRepository.GetAllClients();
+        }
         public void AddAccount(Account account)
         {
             _accountRepository.AddAccount(account);

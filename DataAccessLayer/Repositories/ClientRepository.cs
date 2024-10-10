@@ -25,7 +25,7 @@ namespace DataAccessLayer.Repositories
             using (var connection = _dbConnection.GetConnection())
             {
                 //agregar Password
-                string query = "SELECT ClientId, Name, Dui, PhoneNumber, Address FROM Clients";
+                string query = "SELECT ClientId, Name, Dui, PhoneNumber, Address, Password FROM Clients";
 
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
@@ -40,14 +40,13 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string password = "1234";
                 string query = $"INSERT INTO Clients VALUES(@Name, @Dui, @PhoneNumber, @Address, @Password)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Name", client.Name);
                 command.Parameters.AddWithValue("@Dui", client.Dui);
                 command.Parameters.AddWithValue("@PhoneNumber", client.PhoneNumber);
                 command.Parameters.AddWithValue("@Address", client.Address);
-                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Password", client.Password);
                 try
                 {
                     connection.Open();
@@ -64,7 +63,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string password = "1234"; //Cambiar por "client.Password
+
                 string query = $"UPDATE Clients SET Name = @Name, Dui = @Dui, PhoneNumber = @PhoneNumber, Address = @Address, Password = @Password WHERE ClientId = @ClientId";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Name", client.Name);
@@ -72,7 +71,7 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@PhoneNumber", client.PhoneNumber);
                 command.Parameters.AddWithValue("@Address", client.Address);
                 command.Parameters.AddWithValue("@ClientId", client.Id);
-                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Password", client.Password);
 
 
                 try

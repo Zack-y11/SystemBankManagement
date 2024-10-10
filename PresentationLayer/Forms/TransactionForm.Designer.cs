@@ -35,7 +35,7 @@
             amountTextBox = new TextBox();
             amountLabel = new Label();
             descriptionTransaction = new Label();
-            dateTransaccion = new DateTimePicker();
+            dateTransaction = new DateTimePicker();
             accountNumberLabel = new Label();
             accountNumberTextBox = new TextBox();
             updateButton = new Button();
@@ -54,6 +54,7 @@
             transactionDataGridView.Name = "transactionDataGridView";
             transactionDataGridView.Size = new Size(776, 182);
             transactionDataGridView.TabIndex = 0;
+            transactionDataGridView.CellClick += transactionDataGridView_CellClick;
             // 
             // descriptionTextBox
             // 
@@ -99,12 +100,12 @@
             descriptionTransaction.TabIndex = 26;
             descriptionTransaction.Text = "Descripción:";
             // 
-            // dateTransaccion
+            // dateTransaction
             // 
-            dateTransaccion.Location = new Point(559, 7);
-            dateTransaccion.Name = "dateTransaccion";
-            dateTransaccion.Size = new Size(215, 23);
-            dateTransaccion.TabIndex = 27;
+            dateTransaction.Location = new Point(559, 7);
+            dateTransaction.Name = "dateTransaction";
+            dateTransaction.Size = new Size(215, 23);
+            dateTransaction.TabIndex = 27;
             // 
             // accountNumberLabel
             // 
@@ -133,6 +134,7 @@
             updateButton.TabIndex = 34;
             updateButton.Text = "Actualizar";
             updateButton.UseVisualStyleBackColor = false;
+            updateButton.Click += updateButton_Click;
             // 
             // deleteButton
             // 
@@ -144,6 +146,7 @@
             deleteButton.TabIndex = 35;
             deleteButton.Text = "Eliminar";
             deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Click += deleteButton_Click;
             // 
             // errorTransaction
             // 
@@ -159,7 +162,7 @@
             Controls.Add(updateButton);
             Controls.Add(accountNumberTextBox);
             Controls.Add(accountNumberLabel);
-            Controls.Add(dateTransaccion);
+            Controls.Add(dateTransaction);
             Controls.Add(descriptionTransaction);
             Controls.Add(descriptionTextBox);
             Controls.Add(addressAccount);
@@ -189,5 +192,6 @@
         private Button updateButton;
         private Button deleteButton;
         private ErrorProvider errorTransaction;
+        private DateTimePicker dateTransaction;
     }
 }

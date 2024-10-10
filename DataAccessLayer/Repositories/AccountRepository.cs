@@ -25,7 +25,13 @@ namespace DataAccessLayer.Repositories
 
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = $"SELECT A.AccountNumber, A.Saldo,      AT.Type AS AccountType, \r\n       C.Name AS ClientName, C.Dui AS ClientDUI\r\nFROM Accounts A\r\nJOIN AccountType AT\r\n  ON A.AccountTypeId = AT.AccountTypeId\r\nJOIN Clients C\r\n  ON A.ClientId = C.ClientId;";
+                string query = "SELECT A.AccountId, A.AccountNumber, A.Saldo, A.OpenDateAccount, AT.Type AS AccountType, " +
+               "C.Name AS ClientName, C.Dui AS ClientDUI " +
+               "FROM Accounts A " +
+               "JOIN AccountType AT ON A.AccountTypeId = AT.AccountTypeId " +
+               "JOIN Clients C ON A.ClientId = C.ClientId;";
+
+
 
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
@@ -55,6 +61,27 @@ namespace DataAccessLayer.Repositories
             }
             return typesTable;
         }
+        //GET TABLE CLIENTS ID AND NAME
+        public DataTable GetAllClients()
+        {
+            DataTable clientsTable = new DataTable();
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT ClientId, Name FROM Clients";
+                SqlCommand command = new SqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    clientsTable.Load(reader);
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while getting the clients", ex);
+                }
+            }
+            return clientsTable;
+        }
 
         public void AddAccount(Account account) 
         {
@@ -64,7 +91,7 @@ namespace DataAccessLayer.Repositories
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AccountNumber", account.AccountNumber);
                 command.Parameters.AddWithValue("@Saldo", account.Saldo);
-                command.Parameters.AddWithValue("@OpenDateAccount", account.OpenDateAccount);
+                command.Parameters.AddWithValue("@OpenDateAccount", DateTime.Parse(account.OpenDateAccount));
                 command.Parameters.AddWithValue("@AccountTypeId", account.AccountTypeId);
                 command.Parameters.AddWithValue("@ClientId", account.ClientId);
                 try
@@ -83,11 +110,11 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = $"UPDATE Accounts SET AccountNumber = @AccountNumber, Saldo = @Saldo, OpenDateAccount = @OpenDateAccount, AccountTypeId = @AccountTypeId, ClientId = @ClientId WHERE Id = @AccountId";
+                string query = $"UPDATE Accounts SET AccountNumber = @AccountNumber, Saldo = @Saldo, OpenDateAccount = @OpenDateAccount, AccountTypeId = @AccountTypeId, ClientId = @ClientId WHERE AccountId = @AccountId";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AccountNumber", account.AccountNumber);
                 command.Parameters.AddWithValue("@Saldo", account.Saldo);
-                command.Parameters.AddWithValue("@OpenDateAccount", account.OpenDateAccount);
+                command.Parameters.AddWithValue("@OpenDateAccount", DateTime.Parse(account.OpenDateAccount));
                 command.Parameters.AddWithValue("@AccountTypeId", account.AccountTypeId);
                 command.Parameters.AddWithValue("@ClientId", account.ClientId);
                 command.Parameters.AddWithValue("@AccountId", account.AccountId);
@@ -108,7 +135,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = "DELETE FROM Accounts WHERE Id = @AccountId ";
+                string query = "DELETE FROM Accounts WHERE AccountId = @AccountId ";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AccountId", id);
 

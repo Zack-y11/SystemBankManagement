@@ -15,7 +15,6 @@ namespace PresentationLayer.Forms
     public partial class AccountForm : Form
     {
         private AccountService _accountService;
-        private ClientService _clientService;
         bool isEditing = false;
         public AccountForm()
         {
@@ -25,10 +24,11 @@ namespace PresentationLayer.Forms
             typeAccountComboBox.DataSource = _accountService.GetTypes();
             typeAccountComboBox.DisplayMember = "Type";
             typeAccountComboBox.ValueMember = "AccountTypeId";
-            _clientService = new ClientService();
-            idClientComboBox.DataSource = _clientService.GetClients();
+
+            idClientComboBox.DataSource = _accountService.GetAllClients();
             idClientComboBox.DisplayMember = "Name";
-            idClientComboBox.DisplayMember = "ClientId";
+            idClientComboBox.ValueMember = "ClientId";
+
         }
         public void LoadDataAccounts()
         {
@@ -39,7 +39,7 @@ namespace PresentationLayer.Forms
         {
             if (isEditing)
             {
-                string accountNumber = txtNumAccount.Text;
+                string accountNumber = txtNumberAccount.Text;
                 decimal saldo = decimal.Parse(txtSaldoAccount.Text);
                 string openDateAccount = txtDateAccount.Text;
                 int accountTypeId = (int)typeAccountComboBox.SelectedValue;
@@ -61,14 +61,15 @@ namespace PresentationLayer.Forms
             }
             else
             {
+                int clientId = (int)idClientComboBox.SelectedValue;
                 Account account = new Account
                 {
                     
-                    AccountNumber = txtNumAccount.Text,
+                    AccountNumber = txtNumberAccount.Text,
                     Saldo = decimal.Parse(txtSaldoAccount.Text),
                     OpenDateAccount = txtDateAccount.Text,
                     AccountTypeId = (int)typeAccountComboBox.SelectedValue,
-                    ClientId = int.Parse(idClientComboBox.SelectedValue.ToString())
+                    ClientId = clientId
                 };
                 _accountService.AddAccount(account);
                 LoadDataAccounts();
@@ -81,11 +82,15 @@ namespace PresentationLayer.Forms
             if (accountDataGridView.SelectedRows.Count > 0)
             {
                 isEditing = true;
-                txtNumAccount.Text = accountDataGridView.CurrentRow.Cells[1].Value.ToString();
+                txtNumberAccount.Text = accountDataGridView.CurrentRow.Cells[1].Value.ToString();
                 txtSaldoAccount.Text = accountDataGridView.CurrentRow.Cells[2].Value.ToString();
                 txtDateAccount.Text = accountDataGridView.CurrentRow.Cells[3].Value.ToString();
-                typeAccountComboBox.SelectedValue = accountDataGridView.CurrentRow.Cells[4].Value;
-                idClientComboBox.SelectedValue = accountDataGridView.CurrentRow.Cells[5].Value;
+                int accountTypeId = (int)typeAccountComboBox.SelectedValue;
+                int clientId = (int)idClientComboBox.SelectedValue;
+                //typeAccountComboBox.SelectedValue = accountDataGridView.CurrentRow.Cells[4].Value;
+                //idClientComboBox.SelectedValue = accountDataGridView.CurrentRow.Cells[5].Value;
+
+
             }
             else
             {

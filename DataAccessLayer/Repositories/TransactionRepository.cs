@@ -23,7 +23,7 @@ namespace DataAccessLayer.Repositories
             DataTable transactionTable = new DataTable();
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = $"SELECT \r\n    T.TransactionId,\r\n    C.Name AS ClientName,\r\n    A.AccountNumber,\r\n    T.TypeTransaction,\r\n    T.Amount,\r\n    T.DateTransaction,\r\n    T.Description\r\nFROM \r\n    Transactions T\r\nJOIN \r\n    Accounts A ON T.AccountId = A.AccountId\r\nJOIN \r\n    Clients C ON A.ClientId = C.ClientId;";
+                string query = "SELECT T.TransactionId, C.Name AS ClientName, A.AccountId, A.AccountNumber, T.TypeTransaction, T.Amount, T.DateTransaction, T.Description FROM Transactions T JOIN Accounts A ON T.AccountId = A.AccountId JOIN Clients C ON A.ClientId = C.ClientId;";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
 
@@ -58,9 +58,9 @@ namespace DataAccessLayer.Repositories
                     $" (@AccountId ,@TypeTransaction, @Amount, @DateTransaction, @Description)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AccountId", transaction.AccountId);
-                command.Parameters.AddWithValue("@TypeTransaction", transaction.Type);
+                command.Parameters.AddWithValue("@TypeTransaction", transaction.TypeTransaction);
                 command.Parameters.AddWithValue("@Amount", transaction.Amount);
-                command.Parameters.AddWithValue("@DateTransaction", transaction.Date);
+                command.Parameters.AddWithValue("@DateTransaction", DateTime.Parse(transaction.Date));
                 command.Parameters.AddWithValue("@Description", transaction.Description);
                 try
                 {
@@ -78,12 +78,12 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = $"UPDATE Transactions SET AccountId = @AccountId ,Type = @TypeTransaction, Amount = @Amount, Date = @DateTransaction, Description = @Description WHERE TransactionId = @TransactionId";
+                string query = "UPDATE Transactions SET AccountId = @AccountId, Amount = @Amount, DateTransaction = @DateTransaction, Description = @Description WHERE TransactionId = @TransactionId";
+
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AccountId", transaction.AccountId);
-                command.Parameters.AddWithValue("@TypeTransaction", transaction.Type);
                 command.Parameters.AddWithValue("@Amount", transaction.Amount);
-                command.Parameters.AddWithValue("@DateTransaction", transaction.Date);
+                command.Parameters.AddWithValue("@DateTransaction", DateTime.Parse(transaction.Date));
                 command.Parameters.AddWithValue("@Description", transaction.Description);
                 command.Parameters.AddWithValue("@TransactionId", transaction.TransactionId);
                 try
@@ -103,7 +103,7 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = "DELETE FROM Transactions WHERE Id = @TransactionId";
+                string query = "DELETE FROM Transactions WHERE TransactionId = @TransactionId";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@TransactionId", id);
                 try

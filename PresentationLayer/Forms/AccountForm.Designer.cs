@@ -35,7 +35,7 @@
             DateAccount = new Label();
             txtDateAccount = new DateTimePicker();
             txtSaldoAccount = new TextBox();
-            txtnumberAccount = new TextBox();
+            txtNumberAccount = new TextBox();
             typeAccountComboBox = new ComboBox();
             typeAccountLabel = new Label();
             idClientComboBox = new ComboBox();
@@ -101,12 +101,12 @@
             txtSaldoAccount.Size = new Size(219, 23);
             txtSaldoAccount.TabIndex = 33;
             // 
-            // txtnumberAccount
+            // txtNumberAccount
             // 
-            txtnumberAccount.Location = new Point(189, 9);
-            txtnumberAccount.Name = "txtnumberAccount";
-            txtnumberAccount.Size = new Size(190, 23);
-            txtnumberAccount.TabIndex = 34;
+            txtNumberAccount.Location = new Point(189, 9);
+            txtNumberAccount.Name = "txtNumberAccount";
+            txtNumberAccount.Size = new Size(190, 23);
+            txtNumberAccount.TabIndex = 34;
             // 
             // typeAccountComboBox
             // 
@@ -196,7 +196,7 @@
             Controls.Add(idClientComboBox);
             Controls.Add(typeAccountLabel);
             Controls.Add(typeAccountComboBox);
-            Controls.Add(txtnumberAccount);
+            Controls.Add(txtNumberAccount);
             Controls.Add(txtSaldoAccount);
             Controls.Add(txtDateAccount);
             Controls.Add(DateAccount);
@@ -222,7 +222,7 @@
         private TextBox txtFecha;
         private DateTimePicker txtDateAccount;
         private TextBox txtSaldoAccount;
-        private TextBox txtnumberAccount;
+        private TextBox txtNumberAccount;
         private ComboBox typeAccountComboBox;
         private Label typeAccountLabel;
         private ComboBox idClientComboBox;
