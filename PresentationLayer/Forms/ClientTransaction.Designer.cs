@@ -45,8 +45,9 @@
             // 
             // DeleteButton
             // 
-            DeleteButton.BackColor = Color.Goldenrod;
+            DeleteButton.BackColor = Color.LimeGreen;
             DeleteButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DeleteButton.ForeColor = SystemColors.Window;
             DeleteButton.Location = new Point(661, 60);
             DeleteButton.Name = "DeleteButton";
             DeleteButton.Size = new Size(102, 41);
@@ -56,8 +57,9 @@
             // 
             // updateButton
             // 
-            updateButton.BackColor = Color.Goldenrod;
+            updateButton.BackColor = Color.FromArgb(0, 192, 192);
             updateButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            updateButton.ForeColor = SystemColors.Window;
             updateButton.Location = new Point(477, 60);
             updateButton.Name = "updateButton";
             updateButton.Size = new Size(102, 41);
@@ -75,12 +77,13 @@
             // accountLabel
             // 
             accountLabel.AutoSize = true;
-            accountLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            accountLabel.Location = new Point(39, 7);
+            accountLabel.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            accountLabel.ForeColor = SystemColors.Window;
+            accountLabel.Location = new Point(28, 7);
             accountLabel.Name = "accountLabel";
-            accountLabel.Size = new Size(142, 19);
+            accountLabel.Size = new Size(167, 19);
             accountLabel.TabIndex = 43;
-            accountLabel.Text = "Numero de Cuenta";
+            accountLabel.Text = "Numero de Cuenta:";
             // 
             // transactionDatePicker
             // 
@@ -92,10 +95,11 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            descriptionLabel.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            descriptionLabel.ForeColor = SystemColors.Window;
             descriptionLabel.Location = new Point(39, 135);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(96, 19);
+            descriptionLabel.Size = new Size(108, 19);
             descriptionLabel.TabIndex = 41;
             descriptionLabel.Text = "Descripción:";
             // 
@@ -109,10 +113,11 @@
             // dateLabel
             // 
             dateLabel.AutoSize = true;
-            dateLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateLabel.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateLabel.ForeColor = SystemColors.Window;
             dateLabel.Location = new Point(477, 7);
             dateLabel.Name = "dateLabel";
-            dateLabel.Size = new Size(55, 19);
+            dateLabel.Size = new Size(62, 19);
             dateLabel.TabIndex = 39;
             dateLabel.Text = "Fecha:";
             // 
@@ -126,16 +131,17 @@
             // telefonoAccount
             // 
             telefonoAccount.AutoSize = true;
-            telefonoAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            telefonoAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            telefonoAccount.ForeColor = SystemColors.Window;
             telefonoAccount.Location = new Point(39, 71);
             telefonoAccount.Name = "telefonoAccount";
-            telefonoAccount.Size = new Size(77, 19);
+            telefonoAccount.Size = new Size(88, 19);
             telefonoAccount.TabIndex = 37;
             telefonoAccount.Text = "Cantidad:";
             // 
             // transactionDataGridView
             // 
-            transactionDataGridView.BackgroundColor = Color.Khaki;
+            transactionDataGridView.BackgroundColor = Color.LavenderBlush;
             transactionDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             transactionDataGridView.GridColor = Color.Khaki;
             transactionDataGridView.Location = new Point(12, 189);
@@ -145,8 +151,9 @@
             // 
             // historyButton
             // 
-            historyButton.BackColor = Color.Goldenrod;
+            historyButton.BackColor = Color.RoyalBlue;
             historyButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            historyButton.ForeColor = SystemColors.Window;
             historyButton.Location = new Point(477, 119);
             historyButton.Name = "historyButton";
             historyButton.Size = new Size(286, 41);
@@ -159,6 +166,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(historyButton);
             Controls.Add(DeleteButton);
