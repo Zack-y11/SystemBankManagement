@@ -31,7 +31,7 @@ namespace PresentationLayer.Forms
 
         public void LoadDataAccounts()
         {
-            cuentasDataGridView.DataSource = _accountService.GetAccounts();
+            accountDataGridView.DataSource = _accountService.GetAccounts();
         }
     }
 }

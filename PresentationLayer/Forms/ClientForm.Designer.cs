@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             clientsDataGridView = new DataGridView();
-            btnBorrarCliente = new Button();
-            txtDireccion = new TextBox();
-            direccionAccount = new Label();
-            txtTelefono = new TextBox();
+            btnDeteleClient = new Button();
+            txtAddress = new TextBox();
+            addressClientAccount = new Label();
+            txtPhoneClient = new TextBox();
             txtDui = new TextBox();
-            txtNombre = new TextBox();
-            telefonoAccount = new Label();
-            duiAccount = new Label();
-            nameAcoount = new Label();
-            btnEditarCliente = new Button();
+            txtName = new TextBox();
+            phoneClientAccount = new Label();
+            duiClientAccount = new Label();
+            nameClientAccount = new Label();
+            btnEditClient = new Button();
             addClientButton = new Button();
+            errorClient = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorClient).BeginInit();
             SuspendLayout();
             // 
             // clientsDataGridView
@@ -53,40 +56,40 @@
             clientsDataGridView.Size = new Size(776, 150);
             clientsDataGridView.TabIndex = 0;
             // 
-            // btnBorrarCliente
+            // btnDeteleClient
             // 
-            btnBorrarCliente.BackColor = Color.Goldenrod;
-            btnBorrarCliente.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBorrarCliente.Location = new Point(582, 161);
-            btnBorrarCliente.Name = "btnBorrarCliente";
-            btnBorrarCliente.Size = new Size(102, 41);
-            btnBorrarCliente.TabIndex = 18;
-            btnBorrarCliente.Text = "Borrar";
-            btnBorrarCliente.UseVisualStyleBackColor = false;
+            btnDeteleClient.BackColor = Color.Goldenrod;
+            btnDeteleClient.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDeteleClient.Location = new Point(582, 161);
+            btnDeteleClient.Name = "btnDeteleClient";
+            btnDeteleClient.Size = new Size(102, 41);
+            btnDeteleClient.TabIndex = 18;
+            btnDeteleClient.Text = "Borrar";
+            btnDeteleClient.UseVisualStyleBackColor = false;
             // 
-            // txtDireccion
+            // txtAddress
             // 
-            txtDireccion.Location = new Point(322, 173);
-            txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(215, 23);
-            txtDireccion.TabIndex = 17;
+            txtAddress.Location = new Point(322, 173);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(215, 23);
+            txtAddress.TabIndex = 17;
             // 
-            // direccionAccount
+            // addressClientAccount
             // 
-            direccionAccount.AutoSize = true;
-            direccionAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            direccionAccount.Location = new Point(215, 173);
-            direccionAccount.Name = "direccionAccount";
-            direccionAccount.Size = new Size(80, 19);
-            direccionAccount.TabIndex = 16;
-            direccionAccount.Text = "Dirección:";
+            addressClientAccount.AutoSize = true;
+            addressClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addressClientAccount.Location = new Point(215, 173);
+            addressClientAccount.Name = "addressClientAccount";
+            addressClientAccount.Size = new Size(80, 19);
+            addressClientAccount.TabIndex = 16;
+            addressClientAccount.Text = "Dirección:";
             // 
-            // txtTelefono
+            // txtPhoneClient
             // 
-            txtTelefono.Location = new Point(322, 120);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(215, 23);
-            txtTelefono.TabIndex = 15;
+            txtPhoneClient.Location = new Point(322, 120);
+            txtPhoneClient.Name = "txtPhoneClient";
+            txtPhoneClient.Size = new Size(215, 23);
+            txtPhoneClient.TabIndex = 15;
             // 
             // txtDui
             // 
@@ -95,53 +98,53 @@
             txtDui.Size = new Size(215, 23);
             txtDui.TabIndex = 14;
             // 
-            // txtNombre
+            // txtName
             // 
-            txtNombre.Location = new Point(322, 30);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(215, 23);
-            txtNombre.TabIndex = 13;
+            txtName.Location = new Point(322, 30);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(215, 23);
+            txtName.TabIndex = 13;
             // 
-            // telefonoAccount
+            // phoneClientAccount
             // 
-            telefonoAccount.AutoSize = true;
-            telefonoAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            telefonoAccount.Location = new Point(160, 120);
-            telefonoAccount.Name = "telefonoAccount";
-            telefonoAccount.Size = new Size(156, 19);
-            telefonoAccount.TabIndex = 12;
-            telefonoAccount.Text = "Número de teléfono:";
+            phoneClientAccount.AutoSize = true;
+            phoneClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            phoneClientAccount.Location = new Point(160, 120);
+            phoneClientAccount.Name = "phoneClientAccount";
+            phoneClientAccount.Size = new Size(156, 19);
+            phoneClientAccount.TabIndex = 12;
+            phoneClientAccount.Text = "Número de teléfono:";
             // 
-            // duiAccount
+            // duiClientAccount
             // 
-            duiAccount.AutoSize = true;
-            duiAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            duiAccount.Location = new Point(230, 74);
-            duiAccount.Name = "duiAccount";
-            duiAccount.Size = new Size(43, 19);
-            duiAccount.TabIndex = 11;
-            duiAccount.Text = "DUI:";
+            duiClientAccount.AutoSize = true;
+            duiClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            duiClientAccount.Location = new Point(230, 74);
+            duiClientAccount.Name = "duiClientAccount";
+            duiClientAccount.Size = new Size(43, 19);
+            duiClientAccount.TabIndex = 11;
+            duiClientAccount.Text = "DUI:";
             // 
-            // nameAcoount
+            // nameClientAccount
             // 
-            nameAcoount.AutoSize = true;
-            nameAcoount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameAcoount.Location = new Point(215, 29);
-            nameAcoount.Name = "nameAcoount";
-            nameAcoount.Size = new Size(72, 19);
-            nameAcoount.TabIndex = 10;
-            nameAcoount.Text = "Nombre:";
+            nameClientAccount.AutoSize = true;
+            nameClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nameClientAccount.Location = new Point(215, 29);
+            nameClientAccount.Name = "nameClientAccount";
+            nameClientAccount.Size = new Size(72, 19);
+            nameClientAccount.TabIndex = 10;
+            nameClientAccount.Text = "Nombre:";
             // 
-            // btnEditarCliente
+            // btnEditClient
             // 
-            btnEditarCliente.BackColor = Color.Goldenrod;
-            btnEditarCliente.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarCliente.Location = new Point(582, 98);
-            btnEditarCliente.Name = "btnEditarCliente";
-            btnEditarCliente.Size = new Size(102, 41);
-            btnEditarCliente.TabIndex = 19;
-            btnEditarCliente.Text = "Editar";
-            btnEditarCliente.UseVisualStyleBackColor = false;
+            btnEditClient.BackColor = Color.Goldenrod;
+            btnEditClient.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditClient.Location = new Point(582, 98);
+            btnEditClient.Name = "btnEditClient";
+            btnEditClient.Size = new Size(102, 41);
+            btnEditClient.TabIndex = 19;
+            btnEditClient.Text = "Editar";
+            btnEditClient.UseVisualStyleBackColor = false;
             // 
             // addClientButton
             // 
@@ -154,26 +157,31 @@
             addClientButton.Text = "Agregar";
             addClientButton.UseVisualStyleBackColor = false;
             // 
+            // errorClient
+            // 
+            errorClient.ContainerControl = this;
+            // 
             // ClientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(addClientButton);
-            Controls.Add(btnEditarCliente);
-            Controls.Add(btnBorrarCliente);
-            Controls.Add(txtDireccion);
-            Controls.Add(direccionAccount);
-            Controls.Add(txtTelefono);
+            Controls.Add(btnEditClient);
+            Controls.Add(btnDeteleClient);
+            Controls.Add(txtAddress);
+            Controls.Add(addressClientAccount);
+            Controls.Add(txtPhoneClient);
             Controls.Add(txtDui);
-            Controls.Add(txtNombre);
-            Controls.Add(telefonoAccount);
-            Controls.Add(duiAccount);
-            Controls.Add(nameAcoount);
+            Controls.Add(txtName);
+            Controls.Add(phoneClientAccount);
+            Controls.Add(duiClientAccount);
+            Controls.Add(nameClientAccount);
             Controls.Add(clientsDataGridView);
             Name = "ClientForm";
             Text = "ClientForm";
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorClient).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,16 +189,17 @@
         #endregion
 
         private DataGridView clientsDataGridView;
-        private Button btnBorrarCliente;
-        private TextBox txtDireccion;
-        private Label direccionAccount;
-        private TextBox txtTelefono;
+        private Button btnDeteleClient;
+        private TextBox txtAddress;
+        private Label addressClientAccount;
+        private TextBox txtPhoneClient;
         private TextBox txtDui;
-        private TextBox txtNombre;
-        private Label telefonoAccount;
-        private Label duiAccount;
-        private Label nameAcoount;
-        private Button btnEditarCliente;
+        private TextBox txtName;
+        private Label phoneClientAccount;
+        private Label duiClientAccount;
+        private Label nameClientAccount;
+        private Button btnEditClient;
         private Button addClientButton;
+        private ErrorProvider errorClient;
     }
 }

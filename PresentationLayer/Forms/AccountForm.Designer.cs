@@ -28,31 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cuentasDataGridView = new DataGridView();
+            components = new System.ComponentModel.Container();
+            accountDataGridView = new DataGridView();
             saldoAccount = new Label();
             numAccount = new Label();
-            fechaCuenta = new Label();
-            txtFechaCuenta = new DateTimePicker();
-            saldoInicialTextBox = new TextBox();
-            textBox1 = new TextBox();
+            DateAccount = new Label();
+            txtDateAccount = new DateTimePicker();
+            txtSaldoAccount = new TextBox();
+            txtnumberAccount = new TextBox();
             typeAccountComboBox = new ComboBox();
             typeAccountLabel = new Label();
             idClientComboBox = new ComboBox();
-            label1 = new Label();
+            clientAccount = new Label();
             addAccountButton = new Button();
             updateAccountButton = new Button();
             deleteAccountButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)cuentasDataGridView).BeginInit();
+            errorAccount = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)accountDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorAccount).BeginInit();
             SuspendLayout();
             // 
-            // cuentasDataGridView
+            // accountDataGridView
             // 
-            cuentasDataGridView.BackgroundColor = Color.Khaki;
-            cuentasDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            cuentasDataGridView.Location = new Point(12, 206);
-            cuentasDataGridView.Name = "cuentasDataGridView";
-            cuentasDataGridView.Size = new Size(776, 167);
-            cuentasDataGridView.TabIndex = 0;
+            accountDataGridView.BackgroundColor = Color.Khaki;
+            accountDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            accountDataGridView.Location = new Point(12, 206);
+            accountDataGridView.Name = "accountDataGridView";
+            accountDataGridView.Size = new Size(776, 167);
+            accountDataGridView.TabIndex = 0;
             // 
             // saldoAccount
             // 
@@ -74,36 +77,36 @@
             numAccount.TabIndex = 10;
             numAccount.Text = "Número de cuenta:";
             // 
-            // fechaCuenta
+            // DateAccount
             // 
-            fechaCuenta.AutoSize = true;
-            fechaCuenta.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            fechaCuenta.Location = new Point(38, 93);
-            fechaCuenta.Name = "fechaCuenta";
-            fechaCuenta.Size = new Size(116, 19);
-            fechaCuenta.TabIndex = 13;
-            fechaCuenta.Text = "Fecha Apertura";
+            DateAccount.AutoSize = true;
+            DateAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DateAccount.Location = new Point(38, 93);
+            DateAccount.Name = "DateAccount";
+            DateAccount.Size = new Size(116, 19);
+            DateAccount.TabIndex = 13;
+            DateAccount.Text = "Fecha Apertura";
             // 
-            // txtFechaCuenta
+            // txtDateAccount
             // 
-            txtFechaCuenta.Location = new Point(160, 93);
-            txtFechaCuenta.Name = "txtFechaCuenta";
-            txtFechaCuenta.Size = new Size(219, 23);
-            txtFechaCuenta.TabIndex = 17;
+            txtDateAccount.Location = new Point(160, 93);
+            txtDateAccount.Name = "txtDateAccount";
+            txtDateAccount.Size = new Size(219, 23);
+            txtDateAccount.TabIndex = 17;
             // 
-            // saldoInicialTextBox
+            // txtSaldoAccount
             // 
-            saldoInicialTextBox.Location = new Point(160, 50);
-            saldoInicialTextBox.Name = "saldoInicialTextBox";
-            saldoInicialTextBox.Size = new Size(219, 23);
-            saldoInicialTextBox.TabIndex = 33;
+            txtSaldoAccount.Location = new Point(160, 50);
+            txtSaldoAccount.Name = "txtSaldoAccount";
+            txtSaldoAccount.Size = new Size(219, 23);
+            txtSaldoAccount.TabIndex = 33;
             // 
-            // textBox1
+            // txtnumberAccount
             // 
-            textBox1.Location = new Point(189, 9);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(190, 23);
-            textBox1.TabIndex = 34;
+            txtnumberAccount.Location = new Point(189, 9);
+            txtnumberAccount.Name = "txtnumberAccount";
+            txtnumberAccount.Size = new Size(190, 23);
+            txtnumberAccount.TabIndex = 34;
             // 
             // typeAccountComboBox
             // 
@@ -131,15 +134,15 @@
             idClientComboBox.Size = new Size(219, 23);
             idClientComboBox.TabIndex = 38;
             // 
-            // label1
+            // clientAccount
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(417, 59);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 19);
-            label1.TabIndex = 39;
-            label1.Text = "Id Cliente";
+            clientAccount.AutoSize = true;
+            clientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clientAccount.Location = new Point(417, 59);
+            clientAccount.Name = "clientAccount";
+            clientAccount.Size = new Size(77, 19);
+            clientAccount.TabIndex = 39;
+            clientAccount.Text = "Id Cliente";
             // 
             // addAccountButton
             // 
@@ -174,6 +177,10 @@
             deleteAccountButton.Text = "Eliminar";
             deleteAccountButton.UseVisualStyleBackColor = false;
             // 
+            // errorAccount
+            // 
+            errorAccount.ContainerControl = this;
+            // 
             // AccountForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -182,42 +189,44 @@
             Controls.Add(deleteAccountButton);
             Controls.Add(updateAccountButton);
             Controls.Add(addAccountButton);
-            Controls.Add(label1);
+            Controls.Add(clientAccount);
             Controls.Add(idClientComboBox);
             Controls.Add(typeAccountLabel);
             Controls.Add(typeAccountComboBox);
-            Controls.Add(textBox1);
-            Controls.Add(saldoInicialTextBox);
-            Controls.Add(txtFechaCuenta);
-            Controls.Add(fechaCuenta);
+            Controls.Add(txtnumberAccount);
+            Controls.Add(txtSaldoAccount);
+            Controls.Add(txtDateAccount);
+            Controls.Add(DateAccount);
             Controls.Add(saldoAccount);
             Controls.Add(numAccount);
-            Controls.Add(cuentasDataGridView);
+            Controls.Add(accountDataGridView);
             Name = "AccountForm";
             Text = " ";
-            ((System.ComponentModel.ISupportInitialize)cuentasDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accountDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorAccount).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView cuentasDataGridView;
+        private DataGridView accountDataGridView;
         private Label saldoAccount;
         private Label numAccount;
         private TextBox textBox2;
         private TextBox txtNumAccount;
-        private Label fechaCuenta;
+        private Label DateAccount;
         private TextBox txtFecha;
-        private DateTimePicker txtFechaCuenta;
-        private TextBox saldoInicialTextBox;
-        private TextBox textBox1;
+        private DateTimePicker txtDateAccount;
+        private TextBox txtSaldoAccount;
+        private TextBox txtnumberAccount;
         private ComboBox typeAccountComboBox;
         private Label typeAccountLabel;
         private ComboBox idClientComboBox;
-        private Label label1;
+        private Label clientAccount;
         private Button addAccountButton;
         private Button updateAccountButton;
         private Button deleteAccountButton;
+        private ErrorProvider errorAccount;
     }
 }

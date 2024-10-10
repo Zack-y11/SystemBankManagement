@@ -28,40 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            inicioCuenta = new Label();
-            duiCuenta = new Label();
-            nameTextBox = new TextBox();
+            components = new System.ComponentModel.Container();
+            homeAccount = new Label();
+            duiLogin = new Label();
+            duiTextBox = new TextBox();
             passwordTextBox = new TextBox();
-            contraseñaCuenta = new Label();
-            btnSesion = new Button();
+            passwordLogin = new Label();
+            btnSession = new Button();
+            errorLogin = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorLogin).BeginInit();
             SuspendLayout();
             // 
-            // inicioCuenta
+            // homeAccount
             // 
-            inicioCuenta.AutoSize = true;
-            inicioCuenta.Font = new Font("Corbel", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inicioCuenta.Location = new Point(254, 24);
-            inicioCuenta.Name = "inicioCuenta";
-            inicioCuenta.Size = new Size(270, 29);
-            inicioCuenta.TabIndex = 0;
-            inicioCuenta.Text = "Inicie sesión en su cuenta";
+            homeAccount.AutoSize = true;
+            homeAccount.Font = new Font("Corbel", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            homeAccount.Location = new Point(254, 24);
+            homeAccount.Name = "homeAccount";
+            homeAccount.Size = new Size(270, 29);
+            homeAccount.TabIndex = 0;
+            homeAccount.Text = "Inicie sesión en su cuenta";
             // 
-            // duiCuenta
+            // duiLogin
             // 
-            duiCuenta.AutoSize = true;
-            duiCuenta.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            duiCuenta.Location = new Point(254, 93);
-            duiCuenta.Name = "duiCuenta";
-            duiCuenta.Size = new Size(46, 23);
-            duiCuenta.TabIndex = 1;
-            duiCuenta.Text = "DUI:";
+            duiLogin.AutoSize = true;
+            duiLogin.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            duiLogin.Location = new Point(254, 93);
+            duiLogin.Name = "duiLogin";
+            duiLogin.Size = new Size(46, 23);
+            duiLogin.TabIndex = 1;
+            duiLogin.Text = "DUI:";
             // 
-            // nameTextBox
+            // duiTextBox
             // 
-            nameTextBox.Location = new Point(354, 93);
-            nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(219, 23);
-            nameTextBox.TabIndex = 2;
+            duiTextBox.Location = new Point(354, 93);
+            duiTextBox.Name = "duiTextBox";
+            duiTextBox.Size = new Size(219, 23);
+            duiTextBox.TabIndex = 2;
             // 
             // passwordTextBox
             // 
@@ -71,51 +74,57 @@
             passwordTextBox.Size = new Size(219, 23);
             passwordTextBox.TabIndex = 4;
             // 
-            // contraseñaCuenta
+            // passwordLogin
             // 
-            contraseñaCuenta.AutoSize = true;
-            contraseñaCuenta.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            contraseñaCuenta.Location = new Point(196, 149);
-            contraseñaCuenta.Name = "contraseñaCuenta";
-            contraseñaCuenta.Size = new Size(104, 23);
-            contraseñaCuenta.TabIndex = 3;
-            contraseñaCuenta.Text = "Contraseña:";
+            passwordLogin.AutoSize = true;
+            passwordLogin.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordLogin.Location = new Point(196, 149);
+            passwordLogin.Name = "passwordLogin";
+            passwordLogin.Size = new Size(104, 23);
+            passwordLogin.TabIndex = 3;
+            passwordLogin.Text = "Contraseña:";
             // 
-            // btnSesion
+            // btnSession
             // 
-            btnSesion.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSesion.Location = new Point(354, 223);
-            btnSesion.Name = "btnSesion";
-            btnSesion.Size = new Size(90, 38);
-            btnSesion.TabIndex = 5;
-            btnSesion.Text = "Iniciar";
-            btnSesion.UseVisualStyleBackColor = true;
-            btnSesion.Click += btnSesion_Click;
+            btnSession.Font = new Font("Corbel", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSession.Location = new Point(354, 223);
+            btnSession.Name = "btnSession";
+            btnSession.Size = new Size(90, 38);
+            btnSession.TabIndex = 5;
+            btnSession.Text = "Iniciar";
+            btnSession.UseVisualStyleBackColor = true;
+            btnSession.Click += btnSesion_Click;
+            // 
+            // errorLogin
+            // 
+            errorLogin.ContainerControl = this;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnSesion);
+            Controls.Add(btnSession);
             Controls.Add(passwordTextBox);
-            Controls.Add(contraseñaCuenta);
-            Controls.Add(nameTextBox);
-            Controls.Add(duiCuenta);
-            Controls.Add(inicioCuenta);
+            Controls.Add(passwordLogin);
+            Controls.Add(duiTextBox);
+            Controls.Add(duiLogin);
+            Controls.Add(homeAccount);
             Name = "Login";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)errorLogin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label inicioCuenta;
-        private Label duiCuenta;
-        private TextBox nameTextBox;
+        private Label homeAccount;
+        private Label duiLogin;
+        private TextBox duiTextBox;
         private TextBox passwordTextBox;
-        private Label contraseñaCuenta;
-        private Button btnSesion;
+        private Label passwordLogin;
+        private Button btnSession;
+        private ErrorProvider errorLogin;
     }
 }

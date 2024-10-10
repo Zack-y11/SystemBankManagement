@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             transactionDataGridView = new DataGridView();
             descriptionTextBox = new TextBox();
-            direccionAccount = new Label();
+            addressAccount = new Label();
             amountTextBox = new TextBox();
             amountLabel = new Label();
-            label1 = new Label();
-            fechaTransaccion = new DateTimePicker();
+            descriptionTransaction = new Label();
+            dateTransaccion = new DateTimePicker();
             accountNumberLabel = new Label();
             accountNumberTextBox = new TextBox();
             updateButton = new Button();
             deleteButton = new Button();
+            errorTransaction = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)transactionDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorTransaction).BeginInit();
             SuspendLayout();
             // 
             // transactionDataGridView
@@ -59,15 +62,15 @@
             descriptionTextBox.Size = new Size(215, 23);
             descriptionTextBox.TabIndex = 25;
             // 
-            // direccionAccount
+            // addressAccount
             // 
-            direccionAccount.AutoSize = true;
-            direccionAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            direccionAccount.Location = new Point(488, 9);
-            direccionAccount.Name = "direccionAccount";
-            direccionAccount.Size = new Size(55, 19);
-            direccionAccount.TabIndex = 24;
-            direccionAccount.Text = "Fecha:";
+            addressAccount.AutoSize = true;
+            addressAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addressAccount.Location = new Point(488, 9);
+            addressAccount.Name = "addressAccount";
+            addressAccount.Size = new Size(55, 19);
+            addressAccount.TabIndex = 24;
+            addressAccount.Text = "Fecha:";
             // 
             // amountTextBox
             // 
@@ -86,22 +89,22 @@
             amountLabel.TabIndex = 20;
             amountLabel.Text = "Cantidad:";
             // 
-            // label1
+            // descriptionTransaction
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(50, 137);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 19);
-            label1.TabIndex = 26;
-            label1.Text = "Descripción:";
+            descriptionTransaction.AutoSize = true;
+            descriptionTransaction.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            descriptionTransaction.Location = new Point(50, 137);
+            descriptionTransaction.Name = "descriptionTransaction";
+            descriptionTransaction.Size = new Size(96, 19);
+            descriptionTransaction.TabIndex = 26;
+            descriptionTransaction.Text = "Descripción:";
             // 
-            // fechaTransaccion
+            // dateTransaccion
             // 
-            fechaTransaccion.Location = new Point(559, 7);
-            fechaTransaccion.Name = "fechaTransaccion";
-            fechaTransaccion.Size = new Size(215, 23);
-            fechaTransaccion.TabIndex = 27;
+            dateTransaccion.Location = new Point(559, 7);
+            dateTransaccion.Name = "dateTransaccion";
+            dateTransaccion.Size = new Size(215, 23);
+            dateTransaccion.TabIndex = 27;
             // 
             // accountNumberLabel
             // 
@@ -142,6 +145,10 @@
             deleteButton.Text = "Eliminar";
             deleteButton.UseVisualStyleBackColor = false;
             // 
+            // errorTransaction
+            // 
+            errorTransaction.ContainerControl = this;
+            // 
             // TransactionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -152,16 +159,17 @@
             Controls.Add(updateButton);
             Controls.Add(accountNumberTextBox);
             Controls.Add(accountNumberLabel);
-            Controls.Add(fechaTransaccion);
-            Controls.Add(label1);
+            Controls.Add(dateTransaccion);
+            Controls.Add(descriptionTransaction);
             Controls.Add(descriptionTextBox);
-            Controls.Add(direccionAccount);
+            Controls.Add(addressAccount);
             Controls.Add(amountTextBox);
             Controls.Add(amountLabel);
             Controls.Add(transactionDataGridView);
             Name = "TransactionForm";
             Text = "TransactionForm";
             ((System.ComponentModel.ISupportInitialize)transactionDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorTransaction).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,15 +178,16 @@
 
         private DataGridView transactionDataGridView;
         private TextBox descriptionTextBox;
-        private Label direccionAccount;
+        private Label addressAccount;
         private TextBox amountTextBox;
         private Label amountLabel;
-        private Label label1;
-        private DateTimePicker fechaTransaccion;
+        private Label descriptionTransaction;
+        private DateTimePicker dateTransaccion;
         private ComboBox comboBox1;
         private Label accountNumberLabel;
         private TextBox accountNumberTextBox;
         private Button updateButton;
         private Button deleteButton;
+        private ErrorProvider errorTransaction;
     }
 }

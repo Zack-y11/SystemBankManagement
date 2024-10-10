@@ -17,15 +17,15 @@ namespace LoginForm
         {
             string admin = "admin";
             string password = "admin";
-            if (nameTextBox.Text != admin && passwordTextBox.Text != password)
+            if (duiTextBox.Text != admin && passwordTextBox.Text != password)
             {
-                LoginClient(nameTextBox.Text, passwordTextBox.Text);
+                LoginClient(duiTextBox.Text, passwordTextBox.Text);
                 MessageBox.Show("Welcome Client");
                 this.Hide();
                 ClientTransaction clientTransaction = new ClientTransaction();
                 clientTransaction.ShowDialog();
             }
-            else if (nameTextBox.Text == admin && passwordTextBox.Text == password)
+            else if (duiTextBox.Text == admin && passwordTextBox.Text == password)
             {
                 MessageBox.Show("Welcome Admin");
                 this.Hide();
