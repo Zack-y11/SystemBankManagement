@@ -50,7 +50,7 @@
             // 
             // clientsDataGridView
             // 
-            clientsDataGridView.BackgroundColor = Color.Khaki;
+            clientsDataGridView.BackgroundColor = Color.LavenderBlush;
             clientsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             clientsDataGridView.GridColor = Color.Khaki;
             clientsDataGridView.Location = new Point(12, 274);
@@ -60,13 +60,14 @@
             // 
             // btnDeteleClient
             // 
-            btnDeteleClient.BackColor = Color.Goldenrod;
+            btnDeteleClient.BackColor = Color.Maroon;
             btnDeteleClient.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeteleClient.Location = new Point(582, 161);
+            btnDeteleClient.ForeColor = SystemColors.Window;
+            btnDeteleClient.Location = new Point(582, 162);
             btnDeteleClient.Name = "btnDeteleClient";
             btnDeteleClient.Size = new Size(102, 41);
             btnDeteleClient.TabIndex = 18;
-            btnDeteleClient.Text = "Borrar";
+            btnDeteleClient.Text = "Eliminar";
             btnDeteleClient.UseVisualStyleBackColor = false;
             btnDeteleClient.Click += btnDeteleClient_Click;
             // 
@@ -80,10 +81,11 @@
             // addressClientAccount
             // 
             addressClientAccount.AutoSize = true;
-            addressClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addressClientAccount.Location = new Point(215, 173);
+            addressClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            addressClientAccount.ForeColor = Color.Lavender;
+            addressClientAccount.Location = new Point(196, 173);
             addressClientAccount.Name = "addressClientAccount";
-            addressClientAccount.Size = new Size(80, 19);
+            addressClientAccount.Size = new Size(90, 19);
             addressClientAccount.TabIndex = 16;
             addressClientAccount.Text = "Dirección:";
             // 
@@ -103,6 +105,7 @@
             // 
             // txtName
             // 
+            txtName.BackColor = SystemColors.Window;
             txtName.Location = new Point(322, 30);
             txtName.Name = "txtName";
             txtName.Size = new Size(215, 23);
@@ -111,37 +114,42 @@
             // phoneClientAccount
             // 
             phoneClientAccount.AutoSize = true;
-            phoneClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            phoneClientAccount.Location = new Point(160, 120);
+            phoneClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            phoneClientAccount.ForeColor = Color.Lavender;
+            phoneClientAccount.Location = new Point(141, 120);
             phoneClientAccount.Name = "phoneClientAccount";
-            phoneClientAccount.Size = new Size(156, 19);
+            phoneClientAccount.Size = new Size(177, 19);
             phoneClientAccount.TabIndex = 12;
             phoneClientAccount.Text = "Número de teléfono:";
             // 
             // duiClientAccount
             // 
             duiClientAccount.AutoSize = true;
-            duiClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            duiClientAccount.Location = new Point(230, 74);
+            duiClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            duiClientAccount.ForeColor = Color.Lavender;
+            duiClientAccount.Location = new Point(211, 74);
             duiClientAccount.Name = "duiClientAccount";
-            duiClientAccount.Size = new Size(43, 19);
+            duiClientAccount.Size = new Size(46, 19);
             duiClientAccount.TabIndex = 11;
             duiClientAccount.Text = "DUI:";
             // 
             // nameClientAccount
             // 
             nameClientAccount.AutoSize = true;
-            nameClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameClientAccount.Location = new Point(215, 29);
+            nameClientAccount.FlatStyle = FlatStyle.Popup;
+            nameClientAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            nameClientAccount.ForeColor = Color.Lavender;
+            nameClientAccount.Location = new Point(196, 29);
             nameClientAccount.Name = "nameClientAccount";
-            nameClientAccount.Size = new Size(72, 19);
+            nameClientAccount.Size = new Size(79, 19);
             nameClientAccount.TabIndex = 10;
             nameClientAccount.Text = "Nombre:";
             // 
             // btnEditClient
             // 
-            btnEditClient.BackColor = Color.Goldenrod;
+            btnEditClient.BackColor = Color.LimeGreen;
             btnEditClient.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditClient.ForeColor = SystemColors.Window;
             btnEditClient.Location = new Point(582, 98);
             btnEditClient.Name = "btnEditClient";
             btnEditClient.Size = new Size(102, 41);
@@ -152,8 +160,9 @@
             // 
             // addClientButton
             // 
-            addClientButton.BackColor = Color.Goldenrod;
+            addClientButton.BackColor = Color.FromArgb(0, 192, 192);
             addClientButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addClientButton.ForeColor = SystemColors.Window;
             addClientButton.Location = new Point(582, 29);
             addClientButton.Name = "addClientButton";
             addClientButton.Size = new Size(102, 41);
@@ -176,10 +185,11 @@
             // passwordClient
             // 
             passwordClient.AutoSize = true;
-            passwordClient.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passwordClient.Location = new Point(215, 219);
+            passwordClient.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            passwordClient.ForeColor = Color.Lavender;
+            passwordClient.Location = new Point(196, 219);
             passwordClient.Name = "passwordClient";
-            passwordClient.Size = new Size(94, 19);
+            passwordClient.Size = new Size(108, 19);
             passwordClient.TabIndex = 21;
             passwordClient.Text = "Contraseña:";
             // 
@@ -187,6 +197,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(txtPassword);
             Controls.Add(passwordClient);

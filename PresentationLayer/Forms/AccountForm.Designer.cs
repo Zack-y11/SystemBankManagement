@@ -50,7 +50,7 @@
             // 
             // accountDataGridView
             // 
-            accountDataGridView.BackgroundColor = Color.Khaki;
+            accountDataGridView.BackgroundColor = Color.LavenderBlush;
             accountDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             accountDataGridView.Location = new Point(12, 206);
             accountDataGridView.Name = "accountDataGridView";
@@ -60,53 +60,63 @@
             // saldoAccount
             // 
             saldoAccount.AutoSize = true;
-            saldoAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            saldoAccount.Location = new Point(38, 54);
+            saldoAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            saldoAccount.ForeColor = Color.Lavender;
+            saldoAccount.Location = new Point(49, 53);
             saldoAccount.Name = "saldoAccount";
-            saldoAccount.Size = new Size(54, 19);
+            saldoAccount.Size = new Size(60, 19);
             saldoAccount.TabIndex = 11;
             saldoAccount.Text = "Saldo:";
             // 
             // numAccount
             // 
             numAccount.AutoSize = true;
-            numAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numAccount.Location = new Point(38, 9);
+            numAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            numAccount.ForeColor = Color.Lavender;
+            numAccount.Location = new Point(2, 11);
             numAccount.Name = "numAccount";
-            numAccount.Size = new Size(145, 19);
+            numAccount.Size = new Size(164, 19);
             numAccount.TabIndex = 10;
             numAccount.Text = "Número de cuenta:";
             // 
             // DateAccount
             // 
             DateAccount.AutoSize = true;
-            DateAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DateAccount.Location = new Point(38, 93);
+            DateAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            DateAccount.ForeColor = Color.Lavender;
+            DateAccount.Location = new Point(3, 95);
             DateAccount.Name = "DateAccount";
-            DateAccount.Size = new Size(116, 19);
+            DateAccount.Size = new Size(163, 19);
             DateAccount.TabIndex = 13;
-            DateAccount.Text = "Fecha Apertura";
+            DateAccount.Text = "Fecha de apertura:";
             // 
             // txtDateAccount
             // 
-            txtDateAccount.Location = new Point(160, 93);
+            txtDateAccount.Location = new Point(172, 93);
             txtDateAccount.Name = "txtDateAccount";
             txtDateAccount.Size = new Size(219, 23);
             txtDateAccount.TabIndex = 17;
             // 
             // txtSaldoAccount
             // 
-            txtSaldoAccount.Location = new Point(160, 50);
+            txtSaldoAccount.Location = new Point(172, 50);
             txtSaldoAccount.Name = "txtSaldoAccount";
             txtSaldoAccount.Size = new Size(219, 23);
             txtSaldoAccount.TabIndex = 33;
             // 
             // txtNumberAccount
             // 
+<<<<<<< HEAD
             txtNumberAccount.Location = new Point(189, 9);
             txtNumberAccount.Name = "txtNumberAccount";
             txtNumberAccount.Size = new Size(190, 23);
             txtNumberAccount.TabIndex = 34;
+=======
+            txtnumberAccount.Location = new Point(172, 9);
+            txtnumberAccount.Name = "txtnumberAccount";
+            txtnumberAccount.Size = new Size(219, 23);
+            txtnumberAccount.TabIndex = 34;
+>>>>>>> d0fe13b90cdfba02a7c741ded6b3984b4921eda3
             // 
             // typeAccountComboBox
             // 
@@ -119,10 +129,11 @@
             // typeAccountLabel
             // 
             typeAccountLabel.AutoSize = true;
-            typeAccountLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            typeAccountLabel.Location = new Point(417, 9);
+            typeAccountLabel.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            typeAccountLabel.ForeColor = Color.Lavender;
+            typeAccountLabel.Location = new Point(401, 8);
             typeAccountLabel.Name = "typeAccountLabel";
-            typeAccountLabel.Size = new Size(123, 19);
+            typeAccountLabel.Size = new Size(139, 19);
             typeAccountLabel.TabIndex = 37;
             typeAccountLabel.Text = "Tipo de Cuenta:";
             // 
@@ -137,17 +148,19 @@
             // clientAccount
             // 
             clientAccount.AutoSize = true;
-            clientAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            clientAccount.Location = new Point(417, 59);
+            clientAccount.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            clientAccount.ForeColor = Color.Lavender;
+            clientAccount.Location = new Point(428, 59);
             clientAccount.Name = "clientAccount";
-            clientAccount.Size = new Size(77, 19);
+            clientAccount.Size = new Size(95, 19);
             clientAccount.TabIndex = 39;
-            clientAccount.Text = "Id Cliente";
+            clientAccount.Text = "Id Cliente:";
             // 
             // addAccountButton
             // 
-            addAccountButton.BackColor = Color.Goldenrod;
+            addAccountButton.BackColor = Color.FromArgb(0, 192, 192);
             addAccountButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addAccountButton.ForeColor = SystemColors.Window;
             addAccountButton.Location = new Point(139, 148);
             addAccountButton.Name = "addAccountButton";
             addAccountButton.Size = new Size(102, 41);
@@ -158,8 +171,9 @@
             // 
             // updateAccountButton
             // 
-            updateAccountButton.BackColor = Color.Goldenrod;
+            updateAccountButton.BackColor = Color.LimeGreen;
             updateAccountButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            updateAccountButton.ForeColor = SystemColors.Window;
             updateAccountButton.Location = new Point(330, 148);
             updateAccountButton.Name = "updateAccountButton";
             updateAccountButton.Size = new Size(102, 41);
@@ -170,9 +184,10 @@
             // 
             // deleteAccountButton
             // 
-            deleteAccountButton.BackColor = Color.Goldenrod;
+            deleteAccountButton.BackColor = Color.Maroon;
             deleteAccountButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteAccountButton.Location = new Point(517, 148);
+            deleteAccountButton.ForeColor = SystemColors.Window;
+            deleteAccountButton.Location = new Point(518, 148);
             deleteAccountButton.Name = "deleteAccountButton";
             deleteAccountButton.Size = new Size(102, 41);
             deleteAccountButton.TabIndex = 42;
@@ -188,6 +203,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(deleteAccountButton);
             Controls.Add(updateAccountButton);
