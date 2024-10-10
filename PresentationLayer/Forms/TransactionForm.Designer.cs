@@ -47,7 +47,7 @@
             // 
             // transactionDataGridView
             // 
-            transactionDataGridView.BackgroundColor = Color.Khaki;
+            transactionDataGridView.BackgroundColor = Color.PowderBlue;
             transactionDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             transactionDataGridView.GridColor = Color.Khaki;
             transactionDataGridView.Location = new Point(12, 192);
@@ -57,7 +57,7 @@
             // 
             // descriptionTextBox
             // 
-            descriptionTextBox.Location = new Point(212, 133);
+            descriptionTextBox.Location = new Point(212, 103);
             descriptionTextBox.Name = "descriptionTextBox";
             descriptionTextBox.Size = new Size(215, 23);
             descriptionTextBox.TabIndex = 25;
@@ -66,7 +66,7 @@
             // 
             addressAccount.AutoSize = true;
             addressAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addressAccount.Location = new Point(488, 9);
+            addressAccount.Location = new Point(81, 147);
             addressAccount.Name = "addressAccount";
             addressAccount.Size = new Size(55, 19);
             addressAccount.TabIndex = 24;
@@ -74,7 +74,7 @@
             // 
             // amountTextBox
             // 
-            amountTextBox.Location = new Point(212, 69);
+            amountTextBox.Location = new Point(212, 59);
             amountTextBox.Name = "amountTextBox";
             amountTextBox.Size = new Size(215, 23);
             amountTextBox.TabIndex = 23;
@@ -83,7 +83,7 @@
             // 
             amountLabel.AutoSize = true;
             amountLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            amountLabel.Location = new Point(50, 73);
+            amountLabel.Location = new Point(72, 59);
             amountLabel.Name = "amountLabel";
             amountLabel.Size = new Size(77, 19);
             amountLabel.TabIndex = 20;
@@ -93,7 +93,7 @@
             // 
             descriptionTransaction.AutoSize = true;
             descriptionTransaction.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            descriptionTransaction.Location = new Point(50, 137);
+            descriptionTransaction.Location = new Point(62, 103);
             descriptionTransaction.Name = "descriptionTransaction";
             descriptionTransaction.Size = new Size(96, 19);
             descriptionTransaction.TabIndex = 26;
@@ -101,7 +101,7 @@
             // 
             // dateTransaccion
             // 
-            dateTransaccion.Location = new Point(559, 7);
+            dateTransaccion.Location = new Point(212, 147);
             dateTransaccion.Name = "dateTransaccion";
             dateTransaccion.Size = new Size(215, 23);
             dateTransaccion.TabIndex = 27;
@@ -110,24 +110,24 @@
             // 
             accountNumberLabel.AutoSize = true;
             accountNumberLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            accountNumberLabel.Location = new Point(50, 9);
+            accountNumberLabel.Location = new Point(50, 16);
             accountNumberLabel.Name = "accountNumberLabel";
-            accountNumberLabel.Size = new Size(142, 19);
+            accountNumberLabel.Size = new Size(148, 19);
             accountNumberLabel.TabIndex = 32;
-            accountNumberLabel.Text = "Numero de Cuenta";
+            accountNumberLabel.Text = "Número de Cuenta:";
             // 
             // accountNumberTextBox
             // 
-            accountNumberTextBox.Location = new Point(212, 5);
+            accountNumberTextBox.Location = new Point(212, 12);
             accountNumberTextBox.Name = "accountNumberTextBox";
             accountNumberTextBox.Size = new Size(215, 23);
             accountNumberTextBox.TabIndex = 33;
             // 
             // updateButton
             // 
-            updateButton.BackColor = Color.Goldenrod;
+            updateButton.BackColor = Color.LimeGreen;
             updateButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            updateButton.Location = new Point(488, 115);
+            updateButton.Location = new Point(492, 59);
             updateButton.Name = "updateButton";
             updateButton.Size = new Size(102, 41);
             updateButton.TabIndex = 34;
@@ -136,9 +136,9 @@
             // 
             // deleteButton
             // 
-            deleteButton.BackColor = Color.Goldenrod;
+            deleteButton.BackColor = Color.FromArgb(192, 0, 0);
             deleteButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteButton.Location = new Point(672, 115);
+            deleteButton.Location = new Point(660, 59);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(102, 41);
             deleteButton.TabIndex = 35;
@@ -153,7 +153,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Beige;
+            BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(deleteButton);
             Controls.Add(updateButton);

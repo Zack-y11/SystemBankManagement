@@ -50,7 +50,7 @@
             // 
             // clientsDataGridView
             // 
-            clientsDataGridView.BackgroundColor = Color.Khaki;
+            clientsDataGridView.BackgroundColor = Color.PowderBlue;
             clientsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             clientsDataGridView.GridColor = Color.Khaki;
             clientsDataGridView.Location = new Point(12, 274);
@@ -60,13 +60,13 @@
             // 
             // btnDeteleClient
             // 
-            btnDeteleClient.BackColor = Color.Goldenrod;
+            btnDeteleClient.BackColor = Color.FromArgb(192, 0, 0);
             btnDeteleClient.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeteleClient.Location = new Point(582, 161);
+            btnDeteleClient.Location = new Point(582, 162);
             btnDeteleClient.Name = "btnDeteleClient";
             btnDeteleClient.Size = new Size(102, 41);
             btnDeteleClient.TabIndex = 18;
-            btnDeteleClient.Text = "Borrar";
+            btnDeteleClient.Text = "Eliminar";
             btnDeteleClient.UseVisualStyleBackColor = false;
             // 
             // txtAddress
@@ -139,7 +139,7 @@
             // 
             // btnEditClient
             // 
-            btnEditClient.BackColor = Color.Goldenrod;
+            btnEditClient.BackColor = Color.LimeGreen;
             btnEditClient.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEditClient.Location = new Point(582, 98);
             btnEditClient.Name = "btnEditClient";
@@ -150,7 +150,7 @@
             // 
             // addClientButton
             // 
-            addClientButton.BackColor = Color.Goldenrod;
+            addClientButton.BackColor = Color.FromArgb(0, 192, 192);
             addClientButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addClientButton.Location = new Point(582, 29);
             addClientButton.Name = "addClientButton";
@@ -184,6 +184,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(txtPassword);
             Controls.Add(passwordClient);
