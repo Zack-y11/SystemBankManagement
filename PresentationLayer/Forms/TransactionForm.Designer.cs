@@ -68,7 +68,7 @@
             addressAccount.AutoSize = true;
             addressAccount.Font = new Font("Tahoma", 14.25F);
             addressAccount.ForeColor = Color.LavenderBlush;
-            addressAccount.Location = new Point(66, 143);
+            addressAccount.Location = new Point(484, 9);
             addressAccount.Name = "addressAccount";
             addressAccount.Size = new Size(67, 23);
             addressAccount.TabIndex = 24;
@@ -105,7 +105,7 @@
             // 
             // dateTransaction
             // 
-            dateTransaction.Location = new Point(559, 7);
+            dateTransaction.Location = new Point(557, 9);
             dateTransaction.Name = "dateTransaction";
             dateTransaction.Size = new Size(215, 23);
             dateTransaction.TabIndex = 27;
@@ -133,7 +133,7 @@
             updateButton.BackColor = Color.LimeGreen;
             updateButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             updateButton.ForeColor = SystemColors.Window;
-            updateButton.Location = new Point(492, 59);
+            updateButton.Location = new Point(484, 85);
             updateButton.Name = "updateButton";
             updateButton.Size = new Size(102, 41);
             updateButton.TabIndex = 34;
@@ -146,7 +146,7 @@
             deleteButton.BackColor = Color.Maroon;
             deleteButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteButton.ForeColor = SystemColors.Window;
-            deleteButton.Location = new Point(660, 59);
+            deleteButton.Location = new Point(658, 85);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(102, 41);
             deleteButton.TabIndex = 35;
