@@ -105,19 +105,10 @@
             // 
             // dateTransaction
             // 
-<<<<<<< HEAD
             dateTransaction.Location = new Point(559, 7);
             dateTransaction.Name = "dateTransaction";
             dateTransaction.Size = new Size(215, 23);
             dateTransaction.TabIndex = 27;
-=======
-            dateTransaccion.CalendarFont = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTransaccion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTransaccion.Location = new Point(212, 147);
-            dateTransaccion.Name = "dateTransaccion";
-            dateTransaccion.Size = new Size(215, 23);
-            dateTransaccion.TabIndex = 27;
->>>>>>> d0fe13b90cdfba02a7c741ded6b3984b4921eda3
             // 
             // accountNumberLabel
             // 

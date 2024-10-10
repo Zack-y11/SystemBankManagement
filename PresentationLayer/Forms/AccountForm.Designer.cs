@@ -106,17 +106,10 @@
             // 
             // txtNumberAccount
             // 
-<<<<<<< HEAD
             txtNumberAccount.Location = new Point(189, 9);
             txtNumberAccount.Name = "txtNumberAccount";
             txtNumberAccount.Size = new Size(190, 23);
             txtNumberAccount.TabIndex = 34;
-=======
-            txtnumberAccount.Location = new Point(172, 9);
-            txtnumberAccount.Name = "txtnumberAccount";
-            txtnumberAccount.Size = new Size(219, 23);
-            txtnumberAccount.TabIndex = 34;
->>>>>>> d0fe13b90cdfba02a7c741ded6b3984b4921eda3
             // 
             // typeAccountComboBox
             // 

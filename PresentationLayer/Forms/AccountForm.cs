@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Services;
 using CommonLayer.Entities;
+using FluentValidation.Results;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,18 +63,32 @@ namespace PresentationLayer.Forms
             }
             else
             {
+                if (!decimal.TryParse(txtSaldoAccount.Text, out decimal saldo))
+                {
+                    MessageBox.Show("Please enter a valid saldo.");
+                    return;
+                }
                 int clientId = (int)idClientComboBox.SelectedValue;
                 Account account = new Account
-                {
-                    
+                {   
                     AccountNumber = txtNumberAccount.Text,
                     Saldo = decimal.Parse(txtSaldoAccount.Text),
                     OpenDateAccount = txtDateAccount.Text,
                     AccountTypeId = (int)typeAccountComboBox.SelectedValue,
                     ClientId = clientId
                 };
-                _accountService.AddAccount(account);
-                LoadDataAccounts();
+
+                AccountValidation accountValidation = new AccountValidation();
+                var result = accountValidation.Validate(account);
+                if(!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+                }
+                else
+                {
+                    _accountService.AddAccount(account);
+                    LoadDataAccounts();
+                }
             }
         }
 
@@ -118,6 +134,32 @@ namespace PresentationLayer.Forms
             
             }
 
+        }
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            errorAccount.Clear();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Account.AccountNumber):
+                        errorAccount.SetError(txtNumberAccount, error.ErrorMessage);
+                        break;
+                    case nameof(Account.Saldo):
+                        errorAccount.SetError(txtSaldoAccount, error.ErrorMessage);
+                        break;
+                    case nameof(Account.OpenDateAccount):
+                        errorAccount.SetError(txtDateAccount, error.ErrorMessage);
+                        break;
+                    case nameof(Account.AccountTypeId):
+                        errorAccount.SetError(typeAccountComboBox, error.ErrorMessage);
+                        break;
+                    case nameof(Account.ClientId):
+                        errorAccount.SetError(idClientComboBox, error.ErrorMessage);
+                        break;
+                }
+            }
         }
     }
 }
