@@ -32,7 +32,7 @@ namespace DataAccessLayer.Repositories
             }
             return transactionTable;
         }
-        // Transacction by idClient and account number
+        // Transacction  account number
         public DataTable GetTransacctionsById(string accountNumber)
         {
             DataTable transactionTable = new DataTable();

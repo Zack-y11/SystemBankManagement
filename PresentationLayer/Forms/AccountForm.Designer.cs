@@ -167,7 +167,7 @@
             // 
             deleteAccountButton.BackColor = Color.Goldenrod;
             deleteAccountButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            deleteAccountButton.Location = new Point(499, 148);
+            deleteAccountButton.Location = new Point(517, 148);
             deleteAccountButton.Name = "deleteAccountButton";
             deleteAccountButton.Size = new Size(102, 41);
             deleteAccountButton.TabIndex = 42;
