@@ -32,10 +32,10 @@
             updateButton = new Button();
             accountTextBox = new TextBox();
             accountLabel = new Label();
-            fechaTransaccion = new DateTimePicker();
+            transactionDatePicker = new DateTimePicker();
             descriptionLabel = new Label();
             txtDescripcion = new TextBox();
-            direccionAccount = new Label();
+            dateLabel = new Label();
             txtCantidad = new TextBox();
             telefonoAccount = new Label();
             transactionDataGridView = new DataGridView();
@@ -82,12 +82,12 @@
             accountLabel.TabIndex = 43;
             accountLabel.Text = "Numero de Cuenta";
             // 
-            // fechaTransaccion
+            // transactionDatePicker
             // 
-            fechaTransaccion.Location = new Point(548, 5);
-            fechaTransaccion.Name = "fechaTransaccion";
-            fechaTransaccion.Size = new Size(215, 23);
-            fechaTransaccion.TabIndex = 42;
+            transactionDatePicker.Location = new Point(548, 5);
+            transactionDatePicker.Name = "transactionDatePicker";
+            transactionDatePicker.Size = new Size(215, 23);
+            transactionDatePicker.TabIndex = 42;
             // 
             // descriptionLabel
             // 
@@ -106,15 +106,15 @@
             txtDescripcion.Size = new Size(215, 23);
             txtDescripcion.TabIndex = 40;
             // 
-            // direccionAccount
+            // dateLabel
             // 
-            direccionAccount.AutoSize = true;
-            direccionAccount.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            direccionAccount.Location = new Point(477, 7);
-            direccionAccount.Name = "direccionAccount";
-            direccionAccount.Size = new Size(55, 19);
-            direccionAccount.TabIndex = 39;
-            direccionAccount.Text = "Fecha:";
+            dateLabel.AutoSize = true;
+            dateLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateLabel.Location = new Point(477, 7);
+            dateLabel.Name = "dateLabel";
+            dateLabel.Size = new Size(55, 19);
+            dateLabel.TabIndex = 39;
+            dateLabel.Text = "Fecha:";
             // 
             // txtCantidad
             // 
@@ -165,10 +165,10 @@
             Controls.Add(updateButton);
             Controls.Add(accountTextBox);
             Controls.Add(accountLabel);
-            Controls.Add(fechaTransaccion);
+            Controls.Add(transactionDatePicker);
             Controls.Add(descriptionLabel);
             Controls.Add(txtDescripcion);
-            Controls.Add(direccionAccount);
+            Controls.Add(dateLabel);
             Controls.Add(txtCantidad);
             Controls.Add(telefonoAccount);
             Controls.Add(transactionDataGridView);
@@ -185,10 +185,10 @@
         private Button updateButton;
         private TextBox accountTextBox;
         private Label accountLabel;
-        private DateTimePicker fechaTransaccion;
+        private DateTimePicker transactionDatePicker;
         private Label descriptionLabel;
         private TextBox txtDescripcion;
-        private Label direccionAccount;
+        private Label dateLabel;
         private TextBox txtCantidad;
         private Label telefonoAccount;
         private DataGridView transactionDataGridView;

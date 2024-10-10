@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Services;
+using CommonLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace PresentationLayer.Forms
     {
         private AccountService _accountService;
         private ClientService _clientService;
+        bool isEditing = false;
         public AccountForm()
         {
             InitializeComponent();
@@ -26,12 +28,91 @@ namespace PresentationLayer.Forms
             _clientService = new ClientService();
             idClientComboBox.DataSource = _clientService.GetClients();
             idClientComboBox.DisplayMember = "Name";
-            idClientComboBox.ValueMember = "ClientId";
+            idClientComboBox.DisplayMember = "ClientId";
         }
-
         public void LoadDataAccounts()
         {
             accountDataGridView.DataSource = _accountService.GetAccounts();
+        }
+
+        private void addAccountButton_Click(object sender, EventArgs e)
+        {
+            if (isEditing)
+            {
+                string accountNumber = txtNumAccount.Text;
+                decimal saldo = decimal.Parse(txtSaldoAccount.Text);
+                string openDateAccount = txtDateAccount.Text;
+                int accountTypeId = (int)typeAccountComboBox.SelectedValue;
+                int clientId = (int)idClientComboBox.SelectedValue;
+                int accountId = int.Parse(accountDataGridView.CurrentRow.Cells[0].Value.ToString());
+
+                Account account = new Account
+                {
+                    AccountId = accountId,
+                    AccountNumber = accountNumber,
+                    Saldo = saldo,
+                    OpenDateAccount = openDateAccount,
+                    AccountTypeId = accountTypeId,
+                    ClientId = clientId
+                };
+                _accountService.UpdateAccount(account);
+                LoadDataAccounts();
+                isEditing = false;
+            }
+            else
+            {
+                Account account = new Account
+                {
+                    
+                    AccountNumber = txtNumAccount.Text,
+                    Saldo = decimal.Parse(txtSaldoAccount.Text),
+                    OpenDateAccount = txtDateAccount.Text,
+                    AccountTypeId = (int)typeAccountComboBox.SelectedValue,
+                    ClientId = int.Parse(idClientComboBox.SelectedValue.ToString())
+                };
+                _accountService.AddAccount(account);
+                LoadDataAccounts();
+            }
+        }
+
+
+        private void updateAccountButton_Click(object sender, EventArgs e)
+        {
+            if (accountDataGridView.SelectedRows.Count > 0)
+            {
+                isEditing = true;
+                txtNumAccount.Text = accountDataGridView.CurrentRow.Cells[1].Value.ToString();
+                txtSaldoAccount.Text = accountDataGridView.CurrentRow.Cells[2].Value.ToString();
+                txtDateAccount.Text = accountDataGridView.CurrentRow.Cells[3].Value.ToString();
+                typeAccountComboBox.SelectedValue = accountDataGridView.CurrentRow.Cells[4].Value;
+                idClientComboBox.SelectedValue = accountDataGridView.CurrentRow.Cells[5].Value;
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una fila para editar");
+            }
+        }
+
+        private void deleteAccountButton_Click(object sender, EventArgs e)
+        {
+            if (accountDataGridView.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Debe seleccionar una fila para eliminar", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var delete = new DialogResult();
+                delete = MessageBox.Show("¿Estás seguro de que deseas eliminar esta cuenta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (delete == DialogResult.Yes)
+                {
+                    int id = int.Parse(accountDataGridView.CurrentRow.Cells[0].Value.ToString());
+                    _accountService.DeleteAccount(id);
+                    LoadDataAccounts();
+                }
+            
+            }
+
         }
     }
 }
