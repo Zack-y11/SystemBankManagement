@@ -50,9 +50,19 @@ namespace PresentationLayer.Forms
                 client.Password = passwordClient;
 
 
-                _clientService.UpdateClient(client);
-                LoadDataClients();
-                ClearTextBoxes();
+                ClientValidation clientValidation = new ClientValidation();
+                ValidationResult result = clientValidation.Validate(client);
+
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+                }
+                else
+                {
+                    _clientService.AddClient(client);
+                    LoadDataClients();
+                    ClearTextBoxes();
+                }
 
                 isEditing = false;
             }

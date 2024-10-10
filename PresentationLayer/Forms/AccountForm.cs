@@ -56,8 +56,17 @@ namespace PresentationLayer.Forms
                     AccountTypeId = accountTypeId,
                     ClientId = clientId
                 };
-                _accountService.UpdateAccount(account);
-                LoadDataAccounts();
+                AccountValidation accountValidation = new AccountValidation();
+                var result = accountValidation.Validate(account);
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+                }
+                else
+                {
+                    _accountService.AddAccount(account);
+                    LoadDataAccounts();
+                }
                 isEditing = false;
             }
             else
