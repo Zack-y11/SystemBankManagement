@@ -14,7 +14,7 @@ namespace PresentationLayer.Validations
         {
             RuleFor(account => account.AccountNumber)
             .NotEmpty().WithMessage("El número de cuenta es requerido.")
-            .Matches(@"^ACC\d{7}$").WithMessage("El número de cuenta debe comenzar con 'ACC' seguido de 5 dígitos.");
+            .Matches(@"^ACC\d{7}$").WithMessage("El número de cuenta debe comenzar con 'ACC' seguido de 7 dígitos.");
 
             RuleFor(account => account.Saldo)
                 .GreaterThan(0).WithMessage("El saldo debe ser mayor que cero.")

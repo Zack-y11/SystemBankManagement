@@ -54,8 +54,8 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = $"INSERT INTO Transactions" +
-                    $" (@AccountId ,@TypeTransaction, @Amount, @DateTransaction, @Description)";
+                string query = "INSERT INTO Transactions (AccountId, TypeTransaction, Amount, DateTransaction, Description) " +
+                               "VALUES (@AccountId, @TypeTransaction, @Amount, @DateTransaction, @Description)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AccountId", transaction.AccountId);
                 command.Parameters.AddWithValue("@TypeTransaction", transaction.TypeTransaction);
@@ -64,8 +64,8 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@Description", transaction.Description);
                 try
                 {
-                    connection.Open(); 
-                    command.ExecuteNonQuery(); 
+                    connection.Open();
+                    command.ExecuteNonQuery();
                 }
                 catch (SqlException ex)
                 {

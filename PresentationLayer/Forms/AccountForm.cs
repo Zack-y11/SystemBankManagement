@@ -41,7 +41,7 @@ namespace PresentationLayer.Forms
         {
             if (isEditing)
             {
-                string accountNumber = txtNumberAccount.Text;
+
                 decimal saldo = decimal.Parse(txtSaldoAccount.Text);
                 string openDateAccount = txtDateAccount.Text;
                 int accountTypeId = (int)typeAccountComboBox.SelectedValue;
@@ -51,7 +51,6 @@ namespace PresentationLayer.Forms
                 Account account = new Account
                 {
                     AccountId = accountId,
-                    AccountNumber = accountNumber,
                     Saldo = saldo,
                     OpenDateAccount = openDateAccount,
                     AccountTypeId = accountTypeId,
@@ -98,7 +97,6 @@ namespace PresentationLayer.Forms
             if (accountDataGridView.SelectedRows.Count > 0)
             {
                 isEditing = true;
-                txtNumberAccount.Text = accountDataGridView.CurrentRow.Cells[1].Value.ToString();
                 txtSaldoAccount.Text = accountDataGridView.CurrentRow.Cells[2].Value.ToString();
                 txtDateAccount.Text = accountDataGridView.CurrentRow.Cells[3].Value.ToString();
                 int accountTypeId = (int)typeAccountComboBox.SelectedValue;
@@ -122,10 +120,10 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                var delete = new DialogResult();
-                delete = MessageBox.Show("¿Estás seguro de que deseas eliminar esta cuenta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var confirm = new DialogResult();
+                confirm = MessageBox.Show("¿Estás seguro de que deseas eliminar este cliente?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (delete == DialogResult.Yes)
+                if (confirm == DialogResult.Yes)
                 {
                     int id = int.Parse(accountDataGridView.CurrentRow.Cells[0].Value.ToString());
                     _accountService.DeleteAccount(id);

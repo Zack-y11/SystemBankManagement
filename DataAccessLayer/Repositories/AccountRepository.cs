@@ -110,9 +110,9 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = $"UPDATE Accounts SET AccountNumber = @AccountNumber, Saldo = @Saldo, OpenDateAccount = @OpenDateAccount, AccountTypeId = @AccountTypeId, ClientId = @ClientId WHERE AccountId = @AccountId";
+                string query = $"UPDATE Accounts SET Saldo = @Saldo, OpenDateAccount = @OpenDateAccount, AccountTypeId = @AccountTypeId, ClientId = @ClientId WHERE AccountId = @AccountId";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@AccountNumber", account.AccountNumber);
+                //command.Parameters.AddWithValue("@AccountNumber", account.AccountNumber);
                 command.Parameters.AddWithValue("@Saldo", account.Saldo);
                 command.Parameters.AddWithValue("@OpenDateAccount", DateTime.Parse(account.OpenDateAccount));
                 command.Parameters.AddWithValue("@AccountTypeId", account.AccountTypeId);
@@ -157,7 +157,7 @@ namespace DataAccessLayer.Repositories
             {
                 string query = "UPDATE Accounts SET Saldo = Saldo + @Amount WHERE AccountNumber = @AccountNumber\r\n";
                 SqlCommand command = new SqlCommand (query, connection);
-                command.Parameters.AddWithValue("Saldo", amount);
+                command.Parameters.AddWithValue("@Amount", amount);
                 command.Parameters.AddWithValue("@AccountNumber", AccountNumber);
                 try
                 {
@@ -209,6 +209,27 @@ namespace DataAccessLayer.Repositories
                     throw new Exception("An error occurred while processing the transaction", ex);
                 }
             }
+        }
+        //Select Id by AccountNumber
+        public int GetAccountId(string AccountNumber)
+        {
+            int accountId = 0;
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT AccountId FROM Accounts WHERE AccountNumber = @AccountNumber";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@AccountNumber", AccountNumber);
+                try
+                {
+                    connection.Open();
+                    accountId = Convert.ToInt32(command.ExecuteScalar());
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while getting the account Id", ex);
+                }
+            }
+            return accountId;
         }
         
     }   

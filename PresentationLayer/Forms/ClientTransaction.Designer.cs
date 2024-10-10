@@ -28,44 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DeleteButton = new Button();
-            updateButton = new Button();
+            components = new System.ComponentModel.Container();
+            withdrawlButton = new Button();
+            depositButton = new Button();
             accountTextBox = new TextBox();
             accountLabel = new Label();
             transactionDatePicker = new DateTimePicker();
             descriptionLabel = new Label();
             txtDescripcion = new TextBox();
             dateLabel = new Label();
-            txtCantidad = new TextBox();
+            txtAmount = new TextBox();
             telefonoAccount = new Label();
             transactionDataGridView = new DataGridView();
             historyButton = new Button();
+            errorClientTransaction = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)transactionDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorClientTransaction).BeginInit();
             SuspendLayout();
             // 
-            // DeleteButton
+            // withdrawlButton
             // 
-            DeleteButton.BackColor = Color.LimeGreen;
-            DeleteButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DeleteButton.ForeColor = SystemColors.Window;
-            DeleteButton.Location = new Point(661, 60);
-            DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(102, 41);
-            DeleteButton.TabIndex = 46;
-            DeleteButton.Text = "Retirar";
-            DeleteButton.UseVisualStyleBackColor = false;
+            withdrawlButton.BackColor = Color.LimeGreen;
+            withdrawlButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            withdrawlButton.ForeColor = SystemColors.Window;
+            withdrawlButton.Location = new Point(661, 60);
+            withdrawlButton.Name = "withdrawlButton";
+            withdrawlButton.Size = new Size(102, 41);
+            withdrawlButton.TabIndex = 46;
+            withdrawlButton.Text = "Retirar";
+            withdrawlButton.UseVisualStyleBackColor = false;
+            withdrawlButton.Click += withdrawlButton_Click;
             // 
-            // updateButton
+            // depositButton
             // 
-            updateButton.BackColor = Color.FromArgb(0, 192, 192);
-            updateButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            updateButton.ForeColor = SystemColors.Window;
-            updateButton.Location = new Point(477, 60);
-            updateButton.Name = "updateButton";
-            updateButton.Size = new Size(102, 41);
-            updateButton.TabIndex = 45;
-            updateButton.Text = "Depositar";
-            updateButton.UseVisualStyleBackColor = false;
+            depositButton.BackColor = Color.FromArgb(0, 192, 192);
+            depositButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            depositButton.ForeColor = SystemColors.Window;
+            depositButton.Location = new Point(477, 60);
+            depositButton.Name = "depositButton";
+            depositButton.Size = new Size(102, 41);
+            depositButton.TabIndex = 45;
+            depositButton.Text = "Depositar";
+            depositButton.UseVisualStyleBackColor = false;
+            depositButton.Click += depositButton_Click;
             // 
             // accountTextBox
             // 
@@ -121,12 +126,12 @@
             dateLabel.TabIndex = 39;
             dateLabel.Text = "Fecha:";
             // 
-            // txtCantidad
+            // txtAmount
             // 
-            txtCantidad.Location = new Point(201, 67);
-            txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(215, 23);
-            txtCantidad.TabIndex = 38;
+            txtAmount.Location = new Point(201, 67);
+            txtAmount.Name = "txtAmount";
+            txtAmount.Size = new Size(215, 23);
+            txtAmount.TabIndex = 38;
             // 
             // telefonoAccount
             // 
@@ -162,6 +167,10 @@
             historyButton.UseVisualStyleBackColor = false;
             historyButton.Click += historyButton_Click;
             // 
+            // errorClientTransaction
+            // 
+            errorClientTransaction.ContainerControl = this;
+            // 
             // ClientTransaction
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -169,37 +178,39 @@
             BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(historyButton);
-            Controls.Add(DeleteButton);
-            Controls.Add(updateButton);
+            Controls.Add(withdrawlButton);
+            Controls.Add(depositButton);
             Controls.Add(accountTextBox);
             Controls.Add(accountLabel);
             Controls.Add(transactionDatePicker);
             Controls.Add(descriptionLabel);
             Controls.Add(txtDescripcion);
             Controls.Add(dateLabel);
-            Controls.Add(txtCantidad);
+            Controls.Add(txtAmount);
             Controls.Add(telefonoAccount);
             Controls.Add(transactionDataGridView);
             Name = "ClientTransaction";
             Text = "ClientTransaction";
             ((System.ComponentModel.ISupportInitialize)transactionDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorClientTransaction).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button DeleteButton;
-        private Button updateButton;
+        private Button withdrawlButton;
+        private Button depositButton;
         private TextBox accountTextBox;
         private Label accountLabel;
         private DateTimePicker transactionDatePicker;
         private Label descriptionLabel;
         private TextBox txtDescripcion;
         private Label dateLabel;
-        private TextBox txtCantidad;
+        private TextBox txtAmount;
         private Label telefonoAccount;
         private DataGridView transactionDataGridView;
         private Button historyButton;
+        private ErrorProvider errorClientTransaction;
     }
 }

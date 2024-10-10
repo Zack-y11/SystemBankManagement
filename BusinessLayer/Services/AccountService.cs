@@ -59,5 +59,14 @@ namespace BusinessLayer.Services
                 throw new Exception("Insufficient funds");
             }
         }
+        public int GetAccountId(string accountNumber)
+        {
+            int accountId = _accountRepository.GetAccountId(accountNumber);
+            if (accountId == 0)
+            {
+                throw new Exception("Account number not found.");
+            }
+            return accountId;
+        } 
     }
 }
