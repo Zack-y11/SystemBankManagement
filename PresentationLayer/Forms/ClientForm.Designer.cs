@@ -42,6 +42,8 @@
             btnEditClient = new Button();
             addClientButton = new Button();
             errorClient = new ErrorProvider(components);
+            txtPassword = new TextBox();
+            passwordClient = new Label();
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorClient).BeginInit();
             SuspendLayout();
@@ -51,7 +53,7 @@
             clientsDataGridView.BackgroundColor = Color.Khaki;
             clientsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             clientsDataGridView.GridColor = Color.Khaki;
-            clientsDataGridView.Location = new Point(12, 227);
+            clientsDataGridView.Location = new Point(12, 274);
             clientsDataGridView.Name = "clientsDataGridView";
             clientsDataGridView.Size = new Size(776, 150);
             clientsDataGridView.TabIndex = 0;
@@ -161,11 +163,30 @@
             // 
             errorClient.ContainerControl = this;
             // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(322, 215);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(215, 23);
+            txtPassword.TabIndex = 22;
+            // 
+            // passwordClient
+            // 
+            passwordClient.AutoSize = true;
+            passwordClient.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordClient.Location = new Point(215, 219);
+            passwordClient.Name = "passwordClient";
+            passwordClient.Size = new Size(94, 19);
+            passwordClient.TabIndex = 21;
+            passwordClient.Text = "Contraseña:";
+            // 
             // ClientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtPassword);
+            Controls.Add(passwordClient);
             Controls.Add(addClientButton);
             Controls.Add(btnEditClient);
             Controls.Add(btnDeteleClient);
@@ -201,5 +222,7 @@
         private Button btnEditClient;
         private Button addClientButton;
         private ErrorProvider errorClient;
+        private TextBox txtPassword;
+        private Label passwordClient;
     }
 }
