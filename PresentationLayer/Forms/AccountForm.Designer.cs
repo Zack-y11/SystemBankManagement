@@ -154,6 +154,7 @@
             addAccountButton.TabIndex = 40;
             addAccountButton.Text = "Agregar";
             addAccountButton.UseVisualStyleBackColor = false;
+            addAccountButton.Click += addAccountButton_Click;
             // 
             // updateAccountButton
             // 
@@ -165,6 +166,7 @@
             updateAccountButton.TabIndex = 41;
             updateAccountButton.Text = "Editar";
             updateAccountButton.UseVisualStyleBackColor = false;
+            updateAccountButton.Click += updateAccountButton_Click;
             // 
             // deleteAccountButton
             // 
@@ -176,6 +178,7 @@
             deleteAccountButton.TabIndex = 42;
             deleteAccountButton.Text = "Eliminar";
             deleteAccountButton.UseVisualStyleBackColor = false;
+            deleteAccountButton.Click += deleteAccountButton_Click;
             // 
             // errorAccount
             // 

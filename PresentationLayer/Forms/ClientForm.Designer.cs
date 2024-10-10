@@ -66,6 +66,7 @@
             btnDeteleClient.TabIndex = 18;
             btnDeteleClient.Text = "Borrar";
             btnDeteleClient.UseVisualStyleBackColor = false;
+            btnDeteleClient.Click += btnDeteleClient_Click;
             // 
             // txtAddress
             // 
@@ -145,6 +146,7 @@
             btnEditClient.TabIndex = 19;
             btnEditClient.Text = "Editar";
             btnEditClient.UseVisualStyleBackColor = false;
+            btnEditClient.Click += btnEditClient_Click;
             // 
             // addClientButton
             // 
@@ -156,6 +158,7 @@
             addClientButton.TabIndex = 20;
             addClientButton.Text = "Agregar";
             addClientButton.UseVisualStyleBackColor = false;
+            addClientButton.Click += addClientButton_Click;
             // 
             // errorClient
             // 
