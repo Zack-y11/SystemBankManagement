@@ -41,8 +41,9 @@
             // clientsButton
             // 
             clientsButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            clientsButton.BackColor = Color.Goldenrod;
-            clientsButton.Font = new Font("Corbel", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clientsButton.BackColor = Color.DarkTurquoise;
+            clientsButton.Font = new Font("Tahoma", 14.25F, FontStyle.Bold);
+            clientsButton.ForeColor = SystemColors.Window;
             clientsButton.Location = new Point(12, 168);
             clientsButton.Name = "clientsButton";
             clientsButton.Size = new Size(204, 69);
@@ -53,8 +54,9 @@
             // 
             // cuentasButton
             // 
-            cuentasButton.BackColor = Color.Goldenrod;
-            cuentasButton.Font = new Font("Corbel", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cuentasButton.BackColor = Color.DodgerBlue;
+            cuentasButton.Font = new Font("Tahoma", 14.25F, FontStyle.Bold);
+            cuentasButton.ForeColor = SystemColors.Window;
             cuentasButton.Location = new Point(299, 168);
             cuentasButton.Name = "cuentasButton";
             cuentasButton.Size = new Size(204, 69);
@@ -65,8 +67,9 @@
             // 
             // TansactionsButton
             // 
-            TansactionsButton.BackColor = Color.Goldenrod;
-            TansactionsButton.Font = new Font("Corbel", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TansactionsButton.BackColor = Color.RoyalBlue;
+            TansactionsButton.Font = new Font("Tahoma", 14.25F, FontStyle.Bold);
+            TansactionsButton.ForeColor = SystemColors.Window;
             TansactionsButton.Location = new Point(584, 168);
             TansactionsButton.Name = "TansactionsButton";
             TansactionsButton.Size = new Size(204, 69);
@@ -77,20 +80,22 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Azure;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(336, 12);
+            pictureBox1.Location = new Point(31, 28);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(143, 104);
+            pictureBox1.Size = new Size(741, 107);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Azure;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(336, 286);
+            pictureBox2.Location = new Point(31, 299);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(143, 102);
+            pictureBox2.Size = new Size(741, 102);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
@@ -99,7 +104,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Beige;
+            BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
